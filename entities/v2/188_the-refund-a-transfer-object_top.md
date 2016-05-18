@@ -1,0 +1,1 @@
+A **Transfer Refund** is a request to reimburse a wallet. The money which comes from a wallet and has already been transferred to another one goes back to the wallet it came from.

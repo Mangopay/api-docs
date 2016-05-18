@@ -1,0 +1,1 @@
+These are the base parameters for a Bank Account - for each type (see below) there are various other parameters specific to that type.

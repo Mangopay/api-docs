@@ -1,0 +1,1 @@
+A `dispute` is an object used when a `user` requests a chargeback of `transaction` to their bank – in turn, their bank withdraws the funds from us and we will then repudiate the required funds from your client credit wallet.

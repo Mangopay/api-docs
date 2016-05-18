@@ -1,0 +1,1 @@
+Description: Partial Refund, Add Fees,… (You can refund the same amount on the same transaction only once per day. After 24h you can do another refund of the same amount on the same transaction. If it is a different amount on the same transaction there is no 24h limits.)
