@@ -1,0 +1,1 @@
+The  **Card object** lets you get the card details.

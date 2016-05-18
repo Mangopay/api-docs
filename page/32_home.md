@@ -1,0 +1,1 @@
+**Welcome to the new MANGOPAY API docs site!**

@@ -1,0 +1,1 @@
+[alert type="info"]Once  a wallet is created, its `Currency` can not be changed[/alert]
