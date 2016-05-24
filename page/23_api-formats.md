@@ -20,3 +20,12 @@ You can pay and wire funds in these currencies:
 * « DKK »,
 
 The [ISO_4217](https://en.wikipedia.org/wiki/ISO_4217) format is expected
+
+# HOW TO USE MANGOPAY REST API
+We designed the Mangopay API in a very RESTful way, so that your user experience is simple and straightforward (Wikipedia). You are able to:
+
+* Submit data requires an **HTTP POST** request
+* Retrieve data requires an **HTTP GET** request
+* Change data requires an **HTTP PUT** request
+
+Requests must be sent using content-type «application/json». The request and response body encoding is always UTF-8.
