@@ -1,0 +1,1 @@
+It is possible to view your Fees and Credit Wallets thanks to the API calls below.

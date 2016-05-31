@@ -9,17 +9,16 @@ You need to register a card in order to process a [textdirect PayIn](https://doc
 * If you don’t want to save the card you must change the field ACTIVE in the card object to false as shown in the document [Consult a card Object](https://docs.mangopay.com/api-references/card/)
 * **You need to do your tests in sandbox mode only with the [testing cards](https://docs.mangopay.com/api-references/test-payment/)**
 * **From 24/02/2015, some out-dated browsers will not support payin webs nor card registrations – [more info](https://docs.mangopay.com/payment-security-enhancement-browser-obsolescence/)**
-* **IMPORTANT**: card details must never pass via your server – therefore you must use the card registration process given below and not implement a different system where the card details may touch your server and then you use cURL etc to create the card – (this approach or anything similar) is strictly not allowed
+
+[alert type="danger"]**IMPORTANT**: card details must never pass via your server – therefore you must use the card registration process given below and not implement a different system where the card details may touch your server and then you use cURL etc to create the card – (this approach or anything similar) is strictly not allowed[/alert]
 
 **Registration Flow**
 [alert type="info"]The card registration method lets you customise your payment page. This page can be hosted on your own.[/alert]
 
 Here is the registration flow (the last step correponds to the [Direct PayIn](https://docs.mangopay.com/api-references/payins/payindirectcard/)):
-http://demo.dev-app.net/uploads/medias/SchemeCardRegistration.png
+![alt](http://demo.dev-app.net/uploads/medias/SchemeCardRegistration.png)
 
-[alert type="info"]N.B.: 
+[alert type="info"]
 * It is imperative to inform your users if you are registering their cards
 * The validity of a registered card (CardId) before a payment or a pre-authorisation is 30min maximum. Once one of these operations is made, the card « validity » field change to « VALID ». Then, it is available up to the expiry date
-* TIP : You can download our graphic [KIT](http://docs.mangopay.com/files/2013/09/KIT.zip)
-* The validity of a registered card (CardId) before a payment or a pre-authorisation is  30min maximum. Once one of these operations is made, the card « validity » field change to « VALID ». Then,it is available up to the expiry date.
 [/alert]

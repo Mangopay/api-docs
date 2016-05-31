@@ -1,1 +1,1 @@
-This method is used to close a `Dispute`, effectively confirming that you do not wish to contest it. This action is optional, and once the `ContestDeadlineDate` passes, you will not be able to contest it anyway
+This method is used to close a "Dispute", effectively confirming that you do not wish to contest it. This action is optional, and once the "ContestDeadlineDate" passes, you will not be able to contest it anyway

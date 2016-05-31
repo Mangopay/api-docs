@@ -1,1 +1,0 @@
-A `Repudiation` is created a when a `User` has a requested a chargeback for a `PayIn` and the bank has withdrawn the funds from us automatically – they are always linked to a `Dispute`.

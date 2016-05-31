@@ -1,1 +1,1 @@
-A `Transfer` is a request to relocate e-money from one wallet to another wallet
+A `Transfer` is a request to relocate e-money from one wallet to another wallet.

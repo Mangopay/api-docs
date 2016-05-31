@@ -1,0 +1,1 @@
+The "User" object will also include further parameters depending on the "PersonType" (see below).

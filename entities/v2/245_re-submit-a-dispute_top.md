@@ -1,1 +1,1 @@
-This method is used to resubmit a `Dispute` if it is reopened requiring more docs 
+This method is used to resubmit a "Dispute" if it is reopened requiring more docs 
