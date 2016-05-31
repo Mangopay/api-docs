@@ -1,0 +1,1 @@
+A `Wallet` is an object in which `PayIns` and `Transfers` from users are stored in order to collect money. You can pay into a `Wallet`, withdraw funds from a wallet or transfer funds from a `Wallet` to another `Wallet`.

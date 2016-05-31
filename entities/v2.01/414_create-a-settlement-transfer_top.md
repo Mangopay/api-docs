@@ -1,0 +1,1 @@
+[alert type="info"]The `AuthorId` must match the `AuthorId` of original transaction that was repudiated[/alert] 
