@@ -1,0 +1,1 @@
+It is possible to add funds to your Credit Wallets via a PayIn Bankwire

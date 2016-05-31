@@ -1,0 +1,1 @@
+[alert type="info"]A canceled PreAuthorization CANNOT be reused.[/alert]
