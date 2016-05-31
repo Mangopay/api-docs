@@ -22,7 +22,7 @@ We designed the Mangopay API in a very RESTful way, so that your user experience
 * Retrieve data requires an **HTTP GET** request
 * Change data requires an **HTTP PUT** request
 
-Requests must be sent using content-type «application/json». The request and response body encoding is always UTF-8.
+Requests must be sent using `Content-Type` "application/json". The request and response body encoding is always UTF-8.
 
 ## Response codes
 The following HTTP codes are used by the API to respond to requests:
@@ -39,7 +39,7 @@ The following HTTP codes are used by the API to respond to requests:
 
 **Error Object**
 
-You may get a detailed error description inside an «Error» object.
+You may get a detailed error description inside an `Error` object.
 
 | Property | Type | Description and value |
 | -------- | -------- | -------- |

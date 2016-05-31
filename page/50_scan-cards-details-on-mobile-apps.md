@@ -16,7 +16,7 @@ To scan a credit card, the user simply has to hold the credit card briefly in fr
 
 Check out the demo app:
 
-[![](http://demo.dev-app.net/uploads/medias/available_on_appstore-bc7e1a16f5f11bf22e325546cc10d8a3-2.png)](http://www.apple.com/itunes/download/)
+[![](/uploads/medias/available_on_appstore-bc7e1a16f5f11bf22e325546cc10d8a3-2.png)](http://www.apple.com/itunes/download/)
 
 Scanpay also provide a [Github demo](https://github.com/scanpay/scanpay-demo-ios)
 
@@ -79,7 +79,7 @@ return NO:
 
 Check out the demo app:
 
-[![](http://demo.dev-app.net/uploads/medias/button_google_play-8429899bec065f2773a01e62466cc0c1.png)](https://play.google.com/store/apps/details?id=scanpay.it.demo)
+[![](/uploads/medias/button_google_play-8429899bec065f2773a01e62466cc0c1.png)](https://play.google.com/store/apps/details?id=scanpay.it.demo)
 
 Scanpay also provide a [Github demo](https://github.com/scanpay/scanpay-demo-android)
 

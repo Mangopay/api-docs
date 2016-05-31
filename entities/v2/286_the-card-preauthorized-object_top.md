@@ -7,11 +7,11 @@ The overall process is as follows:
 
 How PreAuthorization + validation (Pay-In) works?
 
-* Once the « PreAuthorization » object gets « Status » = « SUCCEEDED » and « PaymentStatus » = « WAITING » you can charge the card.
+* Once the `PreAuthorization` object gets `Status` = "SUCCEEDED" and `PaymentStatus` = "WAITING" you can charge the card.
 * The Pay-In amount has to be less than or equal to the amount authorized.
 * The Preauthorization can be used only once, even if the payin amount is less than the preauthorized amount.
 
-[alert type="info"]There is a KYC limit on Pay-Ins in order to fight fraud, money laundering and financing of terrorism. You have to send some documents through the API. [Please check the rules to go over the limits](http://demo.dev-app.net/guide/cashinout-limitations)[/alert]
+[alert type="info"]There is a KYC limit on Pay-Ins in order to fight fraud, money laundering and financing of terrorism. You have to send some documents through the API. [Please check the rules to go over the limits](/guide/kyc)[/alert]
 
 [alert type="info"]In Italy, Greece and Spain, the pre-authorization has a particular running. In fact, the pre-authorized amount is debited from the bank account. Pre-authorized funds are stored by the bank. The user will get his/her funds back within 7 days.
 

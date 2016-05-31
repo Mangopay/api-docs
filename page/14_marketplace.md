@@ -4,7 +4,7 @@
 ## Workflow
 MANGOPAY highly recommends to use the following workflow for any marketplaces business. If you have specific needs which are not mentioned here please [take a tour to our desk or contact the support team](https://mangopay.desk.com/).
 
-![alt](http://demo.dev-app.net/uploads/medias/Capture-d’écran-2014-12-01-à-10.29.47.png)
+![alt](/uploads/medias/Capture-d’écran-2014-12-01-à-10.29.47.png)
 
 According to this diagram
 * Once a seller account is created on your application side, your server says to MANGOPAY to create a User and to automatically associate a wallet. The Seller and its seller’s wallet are created.
@@ -48,7 +48,7 @@ For instance, create a Natural-User-request with the following info:
 }
 ```
 
-[alert type="info"]You can add a tag to make comparisons with your data like : « Buyer – internalID: 12345678 »[/alert]
+[alert type="info"]You can add a tag to make comparisons with your data like: "Buyer – internalID: 12345678"[/alert]
 
 ## Update a User profile
 A user can update its profile information. Technically, the backend method is a PUT request on the User ID. Regarding the KYC rules, users might have to upload some proof of identity.
@@ -152,7 +152,7 @@ SecureModeReturnURL:"https://www.mysite.com"
 ## Refund a PayIn
 Find below the classic way to reimburse funds directly on the credit card. As the funds stand into the Buyer wallet before the validation of the application, a refund is a simple request. You also can let the funds into the buyer’s wallet and offer her/him to choose another item/product/service.
 
-![alt](http://demo.dev-app.net/uploads/medias/Capture-d’écran-2014-12-01-à-11.14.36.png)
+![alt](/uploads/medias/Capture-d’écran-2014-12-01-à-11.14.36.png)
 
 ## Validation - Transfer
 Once the app knows that the item has been received, or the service has been done, your server tells MANGOPAY to transfer the funds from the buyer’s wallet to the seller’s one.
@@ -180,7 +180,7 @@ Tag : "DefaultTag"
 [/alert]
 
 ## Collect your fees
-[As you know](http://demo.dev-app.net/guide/collecting-platform-fees) MANGOPAY calculates its fee on the cash-in payments and a fix fee on cash-out (only for none SEPA-EUR withdrawals). The user is never directly charged by MANGOPAY. You, as the platform, are charged by MANGOPAY at the end of the month.
+[As you know](/guide/collecting-platform-fees) MANGOPAY calculates its fee on the cash-in payments and a fix fee on cash-out (only for none SEPA-EUR withdrawals). The user is never directly charged by MANGOPAY. You, as the platform, are charged by MANGOPAY at the end of the month.
 
 You will take your fees on the transfer between the buyer’s wallet and the seller’s wallet. The API only understand cents amounts. Let’s take a example:
 

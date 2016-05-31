@@ -1,6 +1,6 @@
 # IDEMPOTENCY SUPPORT
 
-All API POST requests have idempotency support – this means you can add an « Idempotency-Key » and corresponding value (that you generate on your side) to your **request header**. This then gives you two clear advantages:
+All API POST requests have idempotency support – this means you can add an `Idempotency-Key` and corresponding value (that you generate on your side) to your **request header**. This then gives you two clear advantages:
 
 * If you use the same Idempotency Key within 24 hours, we’ll block all but the first one (ie you can rerun your same requests knowing that we’ll only ever treat them once in 24 hours) – this is particularly useful for direct payments
 * In the event of a timeout or loss of connection, you can use your Idempotency Key to retrieve the missed API response to view the exact the response we gave for this Idempotency Key that you’d previously used. Remember that this call will only work in the 24 hours after the initial use of the Idempotency Key

@@ -1,6 +1,6 @@
 # KYC Concept
 
-[KYC means « Know Your Customer »](https://en.wikipedia.org/wiki/Know_your_customer). These legal obligations are related to our license as an electronic money issuer and are neccessary in order to fight fraud, money laundering and financing of terrorism. There are 3 levels of authentication (light/regular/strong) **managed through the API** by the MANGOPAY compliance team once you sent them. This validation will let your users access a higher level (light to regular or regular to strong):
+[KYC means "Know Your Customer"](https://en.wikipedia.org/wiki/Know_your_customer). These legal obligations are related to our license as an electronic money issuer and are neccessary in order to fight fraud, money laundering and financing of terrorism. There are 3 levels of authentication (light/regular/strong) **managed through the API** by the MANGOPAY compliance team once you sent them. This validation will let your users access a higher level (light to regular or regular to strong):
 
 * **Light Authentication**: Transactions worth less than €2,500 for **cash-in** and/or €1,000 for **cash-out** cumulated **per legal year and per user** (transfers are also counted in this equation).
 * **Regular Authentication**: Transactions worth more than €2,500 for **cash-in** and/or €1,000 for **cash-out** cumulated **per legal year and per user**.

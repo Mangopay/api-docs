@@ -4,7 +4,7 @@
 ## Workflow
 MANGOPAY highly recommends to use the following workflow for any crowdfunding businesses. If you have specific needs which are not mentioned here please [take a tour to our desk or contact the support team.](https://mangopay.desk.com/)
 
-![alt](http://demo.dev-app.net/uploads/medias/CF.png)
+![alt](/uploads/medias/CF.png)
 
 According to this diagram, here is the workflow you can use through your application.
 * Once a Project owner account is created on your application side, your server says to MANGOPAY to create a User. One this user creates a project, your server creates and associate a Project e-wallet.
@@ -179,11 +179,11 @@ Tag : "DefaultTag"
 ## Refund
 If a project hasn’t been funded you will reimburse the contributors or if a single buyer wants to get his/her money back, you have to create one or several Transfer-Refunds. The way, the money goes into the Buyer’s wallet and he/her can re-invest it into another project. Or you can even refunded into the credit card (Transfer-Refund + Payin-Refund).
 
-[Here is the Transfer-Refund API](http://demo.dev-app.net/endpoints/v2#e188_the-refund-a-transfer-object)
+[entity_link entity="189"]Here is the Transfer-Refund API[/entity_link]
 
-[Here is the PayIn-Refund API](http://demo.dev-app.net/endpoints/v2#e190_the-refund-a-payin-object)
+[entity_link entity="191"]Here is the PayIn-Refund API[/entity_link]
 
-![alt](http://demo.dev-app.net/uploads/medias/refundCF.png)
+![alt](/uploads/medias/refundCF.png)
 
 [alert type="info"]You only can refund Buyer if the all the stored funds remain into the project wallet. If €1 has been cashed out or transferred, you will not be able to automatically reimburse contributors.[/alert]
 

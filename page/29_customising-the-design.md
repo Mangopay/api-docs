@@ -1,31 +1,31 @@
 # Customize web Templates
 
-PayIns via Web interface allow you to provide a property called « TemplateURLOptions » to customize your payment pages for credit cards, Sofort and ELV. Giropay does not allow to iFramed its payment page. So you cannot use this Template method with Giropay.
+PayIns via Web interface allow you to provide a property called `TemplateURLOptions` to customize your payment pages for credit cards, Sofort and ELV. Giropay does not allow to iFramed its payment page. So you cannot use this Template method with Giropay.
 
 ## Rules
 You will need to create your own skeleton (page markup) by positioning a zone to be completed by the PSP form via the API when creating a payment page. If your template isn’t displayed, it could be for these reasons:
 
 * The dynamic skeleton will need to be **hosted on your website**
-* Your **SSL certificate** has to be « real » (**not auto-signed**);
+* Your **SSL certificate** has to be "real" (**not auto-signed**);
 * Your **SSL certificate** has to contain at least the fields CN, O, OU and C (**level 2**). we recommend GeoTrust.com
 * **All the certificates** of the SSL certification chain have to be shown/sent by your server (root & intermediate certificate) which blocks the ssl handshake
 * Your certificate **common name** has to match your **host name** exactly
 * Be careful not to use **SNI** (http://en.wikipedia.org/wiki/Server_Name_Indication) on your URL
-* Your template **URL has to be absolute** and in **HTTPS** (port 443) (into the property « TemplateURL »)
+* Your template **URL has to be absolute** and in **HTTPS** (port 443) (into the property `TemplateURL`)
 * All resources/calls have to be submitted as **absolute URLs**
 * The URL must **accept POST request**
 * The URL must **not to be protected** by a password (htaccess, etc.)
 * Your server must be compatible with Java v1.6
 * These rules apply to Sandbox and production environments.
 
-[alert type= »notice » close= »false »]Your domain and SSL certificate** must get a « A » level** here: https://www.ssllabs.com/ssltest/[/alert]
+[alert type= »notice » close= »false »]Your domain and SSL certificate** must get a "A" level** here: https://www.ssllabs.com/ssltest/[/alert]
 
 ## Payline template implementation
 This skeleton can be called for all payments, but it can also be generated dynamically, according to the data which is relevant for each transaction. In this case, the URL could look like this:
 
 > https://url_squelette_dynamique?orderRef=XXXXX&orderAmount=YYYYY&orderCurrency=ZZZ&step=2
 
-The URL will be submitted by initiliasing the parameter «**TemplateURL**».
+The URL will be submitted by initiliasing the parameter **`TemplateURL`**».
 
 ### Contextual Parameters
 The following parameters are submitted to the merchant while reaching out to the dynamic templates:
@@ -171,10 +171,10 @@ When using these instructions (CSS), the following HTML elements apply:
 | Element | Description |
 | -------- | -------- |
 | #PaylineForm | Layout of the form (font, size etc.)  |
-| #PaylineForm h2 | Title of the form (i.e. « Means of Payment ») |
+| #PaylineForm h2 | Title of the form (i.e. "Means of Payment") |
 | #PaylineForm .pane | Form |
 | #PaylineForm h3 | Title of the form section (i.e. pay with existing card) |
-| #PaylineForm #submitButton | Confirmation button (i.e. « Confirm ») |
+| #PaylineForm #submitButton | Confirmation button (i.e. "Confirm") |
 
 #### Choosing the means of payment while using an e-wallet
 
@@ -183,14 +183,14 @@ When using these instructions (CSS), the following HTML elements apply:
 | Element | Description |
 | -------- | -------- |
 | #PaylineForm | Layout of the form (font, size etc.)  |
-| #PaylineForm h2 | Title of the form (i.e. « Means of Payment ») |
+| #PaylineForm h2 | Title of the form (i.e. "Means of Payment") |
 | #PaylineForm .pane | Form |
 | #PaylineForm h3 | Title of the form section (i.e. pay with existing card) |
-| #PaylineForm #cancelButton | Cancellation button (i.e. « Return ») |
-| #PaylineForm #submitButton | Confirmation button (i.e. « Confirm ») |
-| #PaylineForm table.form th | Form: Header cell (i.e. « Credit card type ») |
-| #PaylineForm table.form th label | Form: Labelling of the form (i.e. « Credit card number ») |
+| #PaylineForm #cancelButton | Cancellation button (i.e. "Return") |
+| #PaylineForm #submitButton | Confirmation button (i.e. "Confirm") |
+| #PaylineForm table.form th | Form: Header cell (i.e. "Credit card type") |
+| #PaylineForm table.form th label | Form: Labelling of the form (i.e. "Credit card number") |
 | #PaylineForm table.form td | Form: Cell of the form |
-| #PaylineForm table.form tr#cardNumber td input | Form: Cell (i.e. « Credit card number ») |
-| #PaylineForm table.form tr#cardNumber td a | Form: Link (i.e. « Further information) |
+| #PaylineForm table.form tr#cardNumber td input | Form: Cell (i.e. "Credit card number") |
+| #PaylineForm table.form tr#cardNumber td a | Form: Link (i.e. "Further information") |
 | #PaylineForm ul.errors li | Error message |

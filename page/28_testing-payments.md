@@ -53,7 +53,7 @@ In the Sandbox environment, you can use the following test data to simulate a tr
 * CSC: 123
 
 **Error Codes Triggers**
-With the Visa/Mastercard credit cards, you can trigger specific error codes given on the [error codes page](http://demo.dev-app.net/guide/errors).
+With the Visa/Mastercard credit cards, you can trigger specific error codes given on the [error codes page](/guide/errors).
 
 ## Maestro
 All Maestro payments require 3DS
@@ -73,7 +73,7 @@ All Maestro payments require 3DS
 * CSC: 123
 
 ## Masterpass
-Choose « Masterpass » from the list and then:
+Choose "Masterpass" from the list and then:
 * Login : joe.test@email.com
 * Password : abc123
 * Pet name : fido
@@ -110,7 +110,7 @@ You do not need a card to test this payment method – just click on any of the 
 **You must use the password ″BCMC123″ (this is different to the Visa/Mastercard and Diners one!). If you put a wrong password the card will be blocked**
 
 ## iDeal
-You do not need a specific test account to use iDeal in sandbox – just choose « ING » from the two options on the RedirectURL and the transasction will then be accepted (in production, you would then be redirected to the approriate bank to make the payment)
+You do not need a specific test account to use iDeal in sandbox – just choose "ING" from the two options on the RedirectURL and the transasction will then be accepted (in production, you would then be redirected to the approriate bank to make the payment)
 Note that the following specific amounts are reserved for specific errors:
 * 2.00EUR: the transaction has been cancelled by the user (101002)
 * 3.00EUR: User has let the payment session expire without paying (001034)

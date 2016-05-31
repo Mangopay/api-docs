@@ -1,1 +1,1 @@
-[You can paginate](http://demo.dev-app.net/guide/lists-pagination-management) these HTTP GET requests and also add filters such as BeforeDate, AfterDate, Type (e.g. REFUND_PROOF) and Status (e.g. VALIDATED).
+[You can paginate](/guide/lists-pagination-management) these HTTP GET requests and also add filters such as `BeforeDate`, `AfterDate`, `Type` (e.g. REFUND_PROOF) and `Status` (e.g. VALIDATED).

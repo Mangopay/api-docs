@@ -6,4 +6,4 @@
 }
 ```
 
-**Finally**, the card is created. You are now able to get the card details with [The Card Object](http://demo.dev-app.net/endpoints/v2/cards#e181_the-card-object), and pay using the [Card Direct PayIn Object](http://demo.dev-app.net/endpoints/v2/payins#e285_the-card-direct-payin-object).
+**Finally**, the card is created. You are now able to get the card details with the [entity_link entity="181"]Card Object[/entity_link], and pay using the [entity_link entity="278"]Card Direct PayIn Object[/entity_link].

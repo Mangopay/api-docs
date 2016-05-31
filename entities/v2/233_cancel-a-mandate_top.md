@@ -1,1 +1,1 @@
-[alert type="info"]Note that the mandate must have the « Status » of « SUBMITTED » or « ACTIVE » for this to be acceptable[/alert]
+[alert type="info"]Note that the mandate must have the `Status` of "SUBMITTED"or "ACTIVE" for this to be acceptable[/alert]

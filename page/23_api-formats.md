@@ -10,14 +10,14 @@ All monetary amounts are given as integer numbers in cents (by default eurocents
 
 **Currencies**
 You can pay and wire funds in these currencies:
-* « EUR »,
-* « USD »,
-* « GBP »,
-* « PLN »,
-* « CHF »,
-* « NOK »,
-* « SEK »,
-* « DKK »,
+* EUR
+* USD
+* GBP
+* PLN
+* CHF
+* NOK
+* SEK
+* DKK
 
 The [ISO_4217](https://en.wikipedia.org/wiki/ISO_4217) format is expected
 
@@ -28,4 +28,4 @@ We designed the Mangopay API in a very RESTful way, so that your user experience
 * Retrieve data requires an **HTTP GET** request
 * Change data requires an **HTTP PUT** request
 
-Requests must be sent using content-type «application/json». The request and response body encoding is always UTF-8.
+Requests must be sent using `Content-Type` "application/json". The request and response body encoding is always UTF-8.

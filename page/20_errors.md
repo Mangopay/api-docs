@@ -1,5 +1,5 @@
 # Error codes
-With the Visa/Mastercard credit cards, you can trigger specific error codes by using the transaction amounts given in the column « Test amount »
+With the Visa/Mastercard credit cards, you can trigger specific error codes by using the transaction amounts given in the column "Test amount"
 
 ## Operation failed
 
@@ -17,8 +17,8 @@ With the Visa/Mastercard credit cards, you can trigger specific error codes by u
 |ResultCode|ResultMessage | More information |
 | -------- | -------- | -------- |
 | 001030 |	User has not been redirected	| The user never gets the payment page and never opens the Payline session |
-| 001031 |	User canceled the payment |	The User clicks on « Canceled » on the payment page	 |
-| 101002 |	The transaction has been cancelled by the user |	The User clicks on « Canceled » on the payment page |	
+| 001031 |	User canceled the payment |	The User clicks on "Cancelled" on the payment page	 |
+| 101002 |	The transaction has been cancelled by the user |	The User clicks on "Cancelled" on the payment page |	
 | 001032 |	User is filling in the payment card details	| The user is still on the payment page (Payline session) |	
 | 001033 |	User has not been redirected then the payment session has expired | The session has expired so the Payin Web is failed. The user has gone on the payment page |
 | 001034 |	User has let the payment session expire without paying | The user went to the payment page but let the session expired. So the Payin Web has failed |
@@ -64,7 +64,7 @@ With the Visa/Mastercard credit cards, you can trigger specific error codes by u
 ## Transaction Refused
 |ResultCode|ResultMessage | More information | Test amount |
 | -------- | -------- | -------- | -------- |
-| 101101 | Transaction refused by the bank (Do not honor) | The error « Do not honor » is a message from the bank. You could get it for several raisons: Maximum amount spent per month has been reached on this card // Maximum amount spent on internet per month has been reached on this card // No more funds on bank account | 333.05 |
+| 101101 | Transaction refused by the bank (Do not honor) | The error "Do not honor" is a message from the bank. You could get it for several raisons: Maximum amount spent per month has been reached on this card // Maximum amount spent on internet per month has been reached on this card // No more funds on bank account | 333.05 |
 | 101102 | Transaction refused by the bank (Amount limit) | You will get this error if the user reached a bank amount limit. It could be: Maximum pre authorized amount reached // Maximum amount spent per month has been reached on this card // Maximum amount spent on internet per month has been reached on this card | 333.51 |
 | 101103 | Transaction refused by the terminal |  | 333.58 |
 | 101104 | Transaction refused by the bank (card limit reached) |  | 333.60 |
@@ -117,7 +117,7 @@ With the Visa/Mastercard credit cards, you can trigger specific error codes by u
 | -------- | -------- | -------- | -------- |
 | 008999 | Fraud policy error |  |  |
 | 008001 | Counterfeit Card |  |  |
-| 008002 | Lost Card | A « lost card » error is a rule carried by the bank which deactivate a card due to too many payments (or attempts). In Sandbox, just choose another card, this one will be reactivated soon (the day after). In Prodcution, the card is blocked for the day or concidered as fraudulent by the bank | 333.41 |
+| 008002 | Lost Card | A "lost card" error is a rule carried by the bank which deactivate a card due to too many payments (or attempts). In Sandbox, just choose another card, this one will be reactivated soon (the day after). In Prodcution, the card is blocked for the day or concidered as fraudulent by the bank | 333.41 |
 | 008003 | Stolen Card | Similar to 008002 | 333.43 |
 | 008004 | Card bin not authorized |  |  |
 | 008005 | Security violation |  | 333.63 |
@@ -161,8 +161,8 @@ With the Visa/Mastercard credit cards, you can trigger specific error codes by u
 
 ## Payout error codes
 If your payout is successfully treated (your payout becomes SUCCEEDED), it can later be reaccredited for a variety of reasons.
-In this case, the payout stays as « SUCCEEDED » but a new transaction is created, which will be a Refund of the original Payout (in the same way you can have a refunded Payin except the difference is that its not client driven).
-In this case, as for payin refunds, you’ll have 2 fields within « RefundReason » -> RefundReasonMessage and RefundReasonType. Possible « RefundReason »s are: BANKACCOUNT_INCORRECT, BANKACCOUNT_HAS_BEEN_CLOSED, OWNER_DOT_NOT_MATCH_BANKACCOUNT, WITHDRAWAL_IMPOSSIBLE_ON_SAVINGS_ACCOUNTS. This will usually be accompanied by a custom message in the « RefundReasonMessage » field
+In this case, the payout stays as "SUCCEEDED" but a new transaction is created, which will be a Refund of the original Payout (in the same way you can have a refunded Payin except the difference is that its not client driven).
+In this case, as for payin refunds, you’ll have 2 fields within `RefundReaso` -> `RefundReasonMessage` and `RefundReasonType`. Possible `RefundReason` are: BANKACCOUNT_INCORRECT, BANKACCOUNT_HAS_BEEN_CLOSED, OWNER_DOT_NOT_MATCH_BANKACCOUNT, WITHDRAWAL_IMPOSSIBLE_ON_SAVINGS_ACCOUNTS. This will usually be accompanied by a custom message in the `RefundReasonMessage` field
 
 |ResultCode|ResultMessage | More information |
 | -------- | -------- | -------- |
@@ -172,5 +172,5 @@ In this case, as for payin refunds, you’ll have 2 fields within « RefundReaso
 | 121003 or 001001 | Insufficient wallet balance | -------- |
 | 121004 | Specific case: please contact our Support Team or Other case | -------- |
 | 121005 | Refused due to the Fraud Policy | -------- |
-| 002998 | Blocked due to the Bank Account Owner’s KYC limitations (maximum debited or credited amount reached) | The bank account needs to be KYC verified ([more info](https://docs.mangopay.com/api-references/kyc-rules/)) |
-| 002999 | Blocked due to a Debited User’s KYC limitations (maximum debited or credited amount reached) | One of the user’s who has contributed to the wallet being debited needs to be KYC verified ([more info](https://docs.mangopay.com/api-references/kyc-rules/)) |
+| 002998 | Blocked due to the Bank Account Owner’s KYC limitations (maximum debited or credited amount reached) | The bank account needs to be KYC verified ([more info](/guide/kyc)) |
+| 002999 | Blocked due to a Debited User’s KYC limitations (maximum debited or credited amount reached) | One of the user’s who has contributed to the wallet being debited needs to be KYC verified ([more info](/guide/kyc)) |

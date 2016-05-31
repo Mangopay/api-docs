@@ -1,1 +1,1 @@
-[alert type="info"]You need to fill in only the binary code. Do not send the first part that some converters add into the binary code which is <img alt= » » src= »data:image/png;base64,[/alert]
+[alert type="info"]You need to fill in only the binary code. Do not send the first part that some converters add into the binary code which is <img src=" data:image/png;base64..." />[/alert]

@@ -11,7 +11,7 @@ There are two ways to authenticate and communicate with MANGOPAY:
 
 To connect to the API with a standard Basic Access Authentification, the user sends the server authentification credentials thanks to the Authorization Header. The Authorization Header is constructed as follows:
 
-1. Username and password are combined into a string « username:password »
+1. Username and password are combined into a string "username:password"
 2. The resulting [string](https://en.wikipedia.org/wiki/String_literal) is then encoded using [Base64](https://en.wikipedia.org/wiki/Base64)
 3. The authorization method is given by adding “Basic “ to the encoded string (please note the space between Basic and the string)
 

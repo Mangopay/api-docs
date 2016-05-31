@@ -5,4 +5,4 @@ A `Legal User` represents a business or an organization whereas a natural user i
 * withdraw e-money from a wallet
 * create wallets, etc.
 
-Please refer to our [KYC Rules](http://demo.dev-app.net/guide/kyc) in order to find out more about procedures and authentication levels.
+Please refer to our [KYC Rules](/guide/kyc) in order to find out more about procedures and authentication levels.

@@ -1,9 +1,9 @@
-Bank Accounts is an item targeted by a PayOut Bank wire request. This is required in order to [process a PayOut Bank wire](http://demo.dev-app.net/endpoints/v2/payouts#e227_the-payout-object), as it contains all bank accounts. It may also be linked to a user (UserId). The API accepts the following formats:
-* BIC & IBAN
-* [Local UK format](/endpoints/v2#entity_13)
-* [Local US format](/endpoints/v2#entity_27)
-* [Local CA format](/endpoints/v2#entity_12)
-* Other local formats (unspecified but different from the previous).
+Bank Accounts is an item targeted by a PayOut Bank wire request. This is required in order to [entity_link entity="227"]process a PayOut Bank wire[/entity_link], as it contains all bank accounts. It may also be linked to a user (UserId). The API accepts the following formats:
+* [entity_link entity="40"]BIC & IBAN[/entity_link]
+* [entity_link entity="25"]Local UK format[/entity_link]
+* [entity_link entity="26"]Local US format[/entity_link]
+* [entity_link entity="11"]Local CA format[/entity_link]
+* [entity_link entity="174"]Other local formats[/entity_link] (unspecified but different from the previous).
 
 Please pay special attention on the fact that even in sandbox mode you will need to put a real life existing valid BIC/IBAN since the Mangopay and banks tests are made on the validity of this one.
 
