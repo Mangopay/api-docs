@@ -1,3 +1,5 @@
+# Authentification
+
 There are two ways to authenticate and communicate with MANGOPAY:
 * **OAuth 2.0**: simple to implement, it has a very high level of security
 * **Basic Access Authentification**, which is a fast way to implement our API. However, this presents an average security level
@@ -5,7 +7,7 @@ There are two ways to authenticate and communicate with MANGOPAY:
 **Remark**: the two methods only work over HTTPS.
 
 
-# Basic Access Authentification
+## Basic Access Authentification
 
 To connect to the API with a standard Basic Access Authentification, the user sends the server authentification credentials thanks to the Authorization Header. The Authorization Header is constructed as follows:
 
@@ -30,7 +32,7 @@ Resource: A base64 encoder : http://www.motobit.com/util/base64-decoder-encoder.
 
 
 
-# OAuth 2.0 : Client Credentials Grant
+## OAuth 2.0 : Client Credentials Grant
 
 To use this second method , you first need to setup the Authentification Header with the Basic Access Authentication method. You will then focus on obtaining a token with OAuth 2.0.
 

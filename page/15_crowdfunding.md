@@ -1,6 +1,7 @@
+# Integrating MANGOPAY for a Crowdfunding platform
 **I am developing a Crowdfunding platform. How to implement MANGOPAY?**
 
-# WORKFLOW
+## Workflow
 MANGOPAY highly recommends to use the following workflow for any crowdfunding businesses. If you have specific needs which are not mentioned here please [take a tour to our desk or contact the support team.](https://mangopay.desk.com/)
 
 ![alt](http://demo.dev-app.net/uploads/medias/CF.png)
@@ -26,11 +27,12 @@ Let’s take an example:
 *  * All the payers/contributors are reimbursed. Here the user-payer gets the €100 back into his wallet. He/she can invest it into another project.
 *  * Or you can reimburse the credit card.
 
-# Create Contributors and Project owners
+## Create Contributors and Project owners
 MANGOPAY do not distinguish Contributors and Project owners. They all are users through the solution so your application has to make the difference between them.
 
-[Here is the dedicated documentation for a Legal user (Companies or organizations)](https://docs.mangopay.com/api-references/users/natural-users/)
-[Here is the dedicated documentation for a Natural user](https://docs.mangopay.com/api-references/users/legal-users/)
+[entity_link entity="254"]Here is the dedicated documentation for a Natural user[/entity_link]
+
+[entity_link entity="258"]Here is the dedicated documentation for a Legal user (Companies or organizations)[/entity_link]
 
 For instance, create a Natural-User-request with the following info:
 ```
@@ -53,10 +55,10 @@ For instance, create a Natural-User-request with the following info:
 
 [alert type="info"]You can add a tag to make comparisons with your data like : « Contributor – internalID: 12345678 »[/alert]
 
-# Update a User profile
+## Update a User profile
 A user can update its profile information. Technically, the backend method is a PUT request on the User ID. Regarding the KYC rules, users might have to upload some proof of identity.
 
-[All about KYC technical methods is here](https://docs.mangopay.com/api-references/kyc/documents/)
+[entity_link entity="204"]All about KYC technical methods is here[/entity_link]
 
 Here is a summary for the KYC management. Let’s take a Natural User case:
 
@@ -81,7 +83,7 @@ Here is a summary for the KYC management. Let’s take a Natural User case:
 {"Status": "VALIDATION_ASKED",}
 ```
 
-# PayIn - Cash in payments
+## PayIn - Cash in payments
 Here are the front end steps, for the user
 
 1. The Buyer buys a €50 item and clicks on “Pay now”.
@@ -96,10 +98,10 @@ You will need the CardRegistration and the Direct Payin APIs.
 
 * The application creates a CardRegistration object/li>
 * You’ll receive a JSON object with 3 interesting data at the stage:
-* * the accesskey
-* * the PreRegistrationData
-* * CardRegistrationURL
-* * Here is a returned sample
+1. the accesskey
+2. the PreRegistrationData
+3. CardRegistrationURL
+4. Here is a returned sample
 ```
 {
 "Id": "1169423",
@@ -119,11 +121,11 @@ You will need the CardRegistration and the Direct Payin APIs.
 ```
 * You collect the useful data from the returned object
 * So the payment form on your HTTPS page has to directly POST the following data to the CardRegistrationURL:
-* * the Accesskey (hidden for the user)
-* * the PreRegistrationData (hidden for the user)
-* * CardNumber
-* * Expiry date
-* * CVV
+1. the Accesskey (hidden for the user)
+2. the PreRegistrationData (hidden for the user)
+3. CardNumber
+4. Expiry date
+5. CVV
 * [Here is our JS KIT including the card registration form](https://github.com/MangoPay/cardregistration-js-kit)
 
 **2. The user Buyer is redirected to the payment page**
@@ -151,8 +153,8 @@ SecureModeReturnURL:"https://www.mysite.com"
 * the CreditedUserId is the ID of the User-buyer too
 [/alert]
 
-# Validation - Transfer
-You have to directly transfer the funds to the project e-wallet. This operation is transparent for the user. [Here is the Transfer API](http://demo.dev-app.net/endpoints/v2#e224_the-transfer-object). Now the funds are escrowed into the project e-wallet.
+## Validation - Transfer
+You have to directly transfer the funds to the project e-wallet. This operation is transparent for the user. [entity_link entity="224"]Here is the Transfer API[/entity_link]. Now the funds belong to the Seller.
 
 Following the €100 example, here is an example of the transfer:
 ```
@@ -174,7 +176,7 @@ Tag : "DefaultTag"
 * The AuthorID has to be the ID of the buyer/contributor too
 [/alert]
 
-# Refund
+## Refund
 If a project hasn’t been funded you will reimburse the contributors or if a single buyer wants to get his/her money back, you have to create one or several Transfer-Refunds. The way, the money goes into the Buyer’s wallet and he/her can re-invest it into another project. Or you can even refunded into the credit card (Transfer-Refund + Payin-Refund).
 
 [Here is the Transfer-Refund API](http://demo.dev-app.net/endpoints/v2#e188_the-refund-a-transfer-object)
@@ -185,7 +187,7 @@ If a project hasn’t been funded you will reimburse the contributors or if a si
 
 [alert type="info"]You only can refund Buyer if the all the stored funds remain into the project wallet. If €1 has been cashed out or transferred, you will not be able to automatically reimburse contributors.[/alert]
 
-# The cash out for the project owner
+## The cash out for the project owner
 The project owner just collected the €1000. He is now able to withdraw its funds. Here are the steps:
 1. Register the bank details
 2. Ask for a withdrawal
@@ -193,7 +195,7 @@ The project owner just collected the €1000. He is now able to withdraw its fun
 4. Receive funds on bank account
 
 Technically speaking here are the requests:
-First you have to [register the bank details](http://demo.dev-app.net/endpoints/v2#et1_bank-accounts)
+First you have to [entity_link entity="15"]register the bank details[/entity_link]
 ```
 {
 OwnerName: "Victor Hugo",
@@ -206,7 +208,7 @@ Tag: "custom tag"
 }
 ```
 
-Now you can [Ask for a withdrawal](http://demo.dev-app.net/endpoints/v2#e228_create-a-payout)
+Now you can [entity_link entity="228"]Ask for a withdrawal[/entity_link]
 ```
 {
 Tag:"custom tag",
@@ -227,7 +229,7 @@ Then, there is an interbank delay. It can take up to two days for the seller to 
 
 [alert type="info"]Do not let the funds going out of the wallet if all the contributors who could be reimbursed. You only can refund Buyers if the all the stored funds remain into the project wallet. If €1 has been cashed out or transferred, you will not be able to automatically reimburse contributors.[/alert]
 
-# Collect your fees
+## Collect your fees
 You can collect your fees when the project has been funded so on the Project owner PAYOUT.
 
 Ask for a withdraw

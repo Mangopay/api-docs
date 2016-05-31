@@ -1,4 +1,4 @@
-Bank Accounts is an item targeted by a Pay-out Bank wire request. This is required in order to process a Pay-out Bank wire, as it contains all bank accounts. It may also be linked to a user (UserId). The API accepts the following formats:
+Bank Accounts is an item targeted by a PayOut Bank wire request. This is required in order to [process a PayOut Bank wire](http://demo.dev-app.net/endpoints/v2/payouts#e227_the-payout-object), as it contains all bank accounts. It may also be linked to a user (UserId). The API accepts the following formats:
 * BIC & IBAN
 * [Local UK format](/endpoints/v2#entity_13)
 * [Local US format](/endpoints/v2#entity_27)

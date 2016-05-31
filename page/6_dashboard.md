@@ -1,8 +1,10 @@
+# MANGOPAY Dashboard
+
 The MANGOPAY Dashboard is a visual interface which provides full access to all your activity and operations (get lists, do refunds, do payouts, etc.)! The info below presumes that you have basic knowledge of the Mangopay solution. It uses the specific Mangopay vocabulary so if you are unfamiliar with this, please [have a look here](https://mangopay.desk.com/customer/portal/articles/1631891-glossary).
 
 Please, be careful with your access credentials. In case you think someone has access who shouldn’t, please ask support@mangopay.com to regenerate your login info.
 
-# How to access your MANGOPAY Dashboard
+## How to access your MANGOPAY Dashboard
 **STEP 1. Ask for your access**
 * Go on [this link for a PRODUCTION ACCOUNT](https://api.mangopay.com/authorize?response_type=code&client_id=mangoapps&redirect_uri=https://dashboard.mangopay.com/Authorize/SignIn) or on [this link for SANDBOX ACCOUNT (test environment)](https://api.sandbox.mangopay.com/authorize?response_type=code&client_id=mangoapps&redirect_uri=https://dashboard.sandbox.mangopay.com/Authorize/SignIn)
 * Clic on « Create an access » button.
@@ -19,7 +21,7 @@ You will then receive an email with a dedicated access
 * For a Sandbox account: dashboard.sandbox.mangopay.com
 * If you’ve lost or forgotten your password. You can use the “forgotten password” button.
 
-# How your MANGOPAY Dashboard works
+## How your MANGOPAY Dashboard works
 **DASHBOARD MENU**
 
 ![alt](http://demo.dev-app.net/uploads/medias/DBMenu.png)

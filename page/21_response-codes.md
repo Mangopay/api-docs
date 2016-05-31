@@ -1,17 +1,41 @@
-The following HTTP codes are used by the API to respond to requests
-> **200**: request successful
+# API formats and response codes
 
-> **400**: any kind of logical error (missing parameters, invalid operation, constraint violation etc.)
+## Formats used
+**Dates**
+All date and time values are displayed as integer numbers and represent the number of seconds since the Unix Epoch (January 1 1970 00:00:00 GMT), like [PHP time()](http://php.net/manual/en/function.time.php) function. The date/time property type in the specification is specified as “Time”, the actual JSON type is “Number”.
 
-> **403**: access is forbidden (authentication or authorisation failure)
+**Case Sensitive Parameters**
+The field and parameter names in requests are case sensitive.
 
-> **404**: object not found
+**Amounts**
+All monetary amounts are given as integer numbers in cents (by default eurocents).
 
-> **405**: HTTP method not allowed (for example if you try to update a read-only object)
+**Currencies**
+You can currently pay and wire funds in these currencies: EUR, USD, GBP, PLN, CHF, NOK, SEK, DKK
 
-> **411**: Length Required (if the request body is empty for methods that require it)
+The [ISO_4217](https://en.wikipedia.org/wiki/ISO_4217) format is expected
 
-> **500**: internal server error
+### How to use the MANGOPAY REST API
+We designed the Mangopay API in a very RESTful way, so that your user experience is simple and straightforward (Wikipedia). You are able to:
+
+* Submit data requires an **HTTP POST** request
+* Retrieve data requires an **HTTP GET** request
+* Change data requires an **HTTP PUT** request
+
+Requests must be sent using content-type «application/json». The request and response body encoding is always UTF-8.
+
+## Response codes
+The following HTTP codes are used by the API to respond to requests:
+
+| Response code | Description |
+| -------- | -------- | 
+|200|Request successful|
+|400|Any kind of logical error with your request (missing parameters, invalid operation, constraint violation etc.)|
+|403|Access is forbidden (authentication or authorisation failure)|
+|404|Object not found|
+|405|HTTP method not allowed (for example if you try to update a read-only object)|
+|411|Length Required (if the request body is empty for methods that require it)|
+|500|Internal server error - we advise you to try again later, or contact support if the problem persists|
 
 **Error Object**
 
@@ -19,11 +43,11 @@ You may get a detailed error description inside an «Error» object.
 
 | Property | Type | Description and value |
 | -------- | -------- | -------- |
-| Message | string | Technical error description |
-| Id | string | The Unique Tread ID of the error |
-| Date | TimeStamp | The error date |
-| Type | string | Error type. Can be : param_error, ressource_not_found, etc. |
-| errors | string | The list of the issues which triggered the HTTP error |
+| `Message` | string | Technical error description |
+| `Id` | string | The Unique Tread ID of the error |
+| `Date` | timestamp | The error date |
+| `Type` | string | Error type. Can be : param_error, ressource_not_found, etc. |
+| `errors` | array | The list of the issues which triggered the HTTP error |
 
 **A JSON example**
 

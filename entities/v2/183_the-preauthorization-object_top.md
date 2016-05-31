@@ -1,4 +1,4 @@
-“**Pre-authorization**” ensures the solvency of a registered card for 7 days. Beyond this period, it is still possible to charge the card (PayIns/Card/Direct) but funds are not guaranteed.
+**The PreAuthorization Object** ensures the solvency of a registered card for 7 days. Beyond this period, it is still possible to charge the card (PayIns/Card/Direct) but funds are not guaranteed.
 The overall process is as follows:
 1. Register a card (CardRegistration)
 2.  Create a PreAuthorization with the CardId. This allows you to charge an amount on a card
@@ -11,5 +11,5 @@ How does PreAuthorization work?
 * Once « Status » = « SUCCEEDED » and « PaymentStatus » = « WAITING » you can charge the card.
 * The Pay-In amount has to be less than or equal to the amount authorized.
 
-[alert type="info"] In Italy, Greece and Spain, the pre-authorization has a particular running. In fact, the pre-authorized amount is debited from the bank account. Pre-authorized funds are stored by the bank. The user will get his/her funds back within 7 days.
-This case appears on several Banks (we don’t have exhaustive list) in Spain, Italy and Greece. Mangopay recommends you to inform your users or only create €1.00 pre-authorizations in these countries.[/alert]
+[alert type="info"]In Italy, Greece and Spain, the pre-authorization has a particular running. In fact, the pre-authorized amount is debited from the bank account. Pre-authorized funds are stored by the bank. The user will get his/her funds back within 7 days.
+**This case appears on several Banks (we don’t have exhaustive list) in Spain, Italy and Greece. Mangopay recommends you to inform your users or only create €1.00 pre-authorizations in these countries.**[/alert]

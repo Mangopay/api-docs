@@ -1,6 +1,7 @@
+# Integrating MANGOPAY for a Marketplace
 **I am developing a Marketplace. How to implement MANGOPAY?**
 
-# WORKFLOW
+## Workflow
 MANGOPAY highly recommends to use the following workflow for any marketplaces business. If you have specific needs which are not mentioned here please [take a tour to our desk or contact the support team](https://mangopay.desk.com/).
 
 ![alt](http://demo.dev-app.net/uploads/medias/Capture-d’écran-2014-12-01-à-10.29.47.png)
@@ -21,10 +22,12 @@ Let's take an example
 * The seller receives 16€ on the wallet.
 * He/she can ask for a 16€ withdrawal
 
-# Create buyers and sellers
+## Create buyers and sellers
 MANGOPAY do not distinguish buyers and sellers. They all are users through the solution so your application has to make the difference between them.
-[Here is the dedicated documentation for a Legal user (Companies or organizations)](https://docs.mangopay.com/api-references/users/legal-users/)
-[Here is the dedicated documentation for a Natural user](https://docs.mangopay.com/api-references/users/natural-users/)
+
+[entity_link entity="254"]Here is the dedicated documentation for a Natural user[/entity_link]
+
+[entity_link entity="258"]Here is the dedicated documentation for a Legal user (Companies or organizations)[/entity_link]
 
 For instance, create a Natural-User-request with the following info:
 ```
@@ -47,10 +50,11 @@ For instance, create a Natural-User-request with the following info:
 
 [alert type="info"]You can add a tag to make comparisons with your data like : « Buyer – internalID: 12345678 »[/alert]
 
-# Update a User profile
+## Update a User profile
 A user can update its profile information. Technically, the backend method is a PUT request on the User ID. Regarding the KYC rules, users might have to upload some proof of identity.
 
-[All about KYC technical methods is here](https://docs.mangopay.com/api-references/kyc/documents/)
+[entity_link entity="204"]All about KYC technical methods is here[/entity_link]
+
 
 Here is a summary for the KYC management. Let’s take a Natural User case:
 
@@ -75,7 +79,7 @@ Here is a summary for the KYC management. Let’s take a Natural User case:
 {"Status": "VALIDATION_ASKED",}
 ```
 
-# PayIn - Cash in payments
+## PayIn - Cash in payments
 Here are the front end steps, for the user
 
 1. The Buyer buys a €50 item and clicks on “Pay now”.
@@ -90,10 +94,10 @@ You will need the CardRegistration and the Direct Payin APIs.
 
 * The application creates a CardRegistration object/li>
 * You’ll receive a JSON object with 3 interesting data at the stage:
-* * the accesskey
-* * the PreRegistrationData
-* * CardRegistrationURL
-* * Here is a returned sample
+1. the accesskey
+2. the PreRegistrationData
+3. CardRegistrationURL
+4. Here is a returned sample
 ```
 {
 "Id": "1169423",
@@ -113,11 +117,11 @@ You will need the CardRegistration and the Direct Payin APIs.
 ```
 * You collect the useful data from the returned object
 * So the payment form on your HTTPS page has to directly POST the following data to the CardRegistrationURL:
-* * the Accesskey (hidden for the user)
-* * the PreRegistrationData (hidden for the user)
-* * CardNumber
-* * Expiry date
-* * CVV
+1. the Accesskey (hidden for the user)
+2. the PreRegistrationData (hidden for the user)
+3. CardNumber
+4. Expiry date
+5. CVV
 * [Here is our JS KIT including the card registration form](https://github.com/MangoPay/cardregistration-js-kit)
 
 **2. The user Buyer is redirected to the payment page**
@@ -145,13 +149,14 @@ SecureModeReturnURL:"https://www.mysite.com"
 * the CreditedUserId is the ID of the User-buyer too
 [/alert]
 
-# Refund a PayIn
+## Refund a PayIn
 Find below the classic way to reimburse funds directly on the credit card. As the funds stand into the Buyer wallet before the validation of the application, a refund is a simple request. You also can let the funds into the buyer’s wallet and offer her/him to choose another item/product/service.
 
 ![alt](http://demo.dev-app.net/uploads/medias/Capture-d’écran-2014-12-01-à-11.14.36.png)
 
-# Validation - Transfer
-Once the app knows that the item has been received, or the service has been done, your server tells MANGOPAY to transfer the funds from the buyer’s wallet to the seller’s one. [Here is the Transfer API](https://docs.mangopay.com/api-references/transfers/). Now the funds belong to the Seller.
+## Validation - Transfer
+Once the app knows that the item has been received, or the service has been done, your server tells MANGOPAY to transfer the funds from the buyer’s wallet to the seller’s one.
+[entity_link entity="224"]Here is the Transfer API[/entity_link]. Now the funds belong to the Seller.
 
 Following the €50 example, here is an example of the transfer:
 ```
@@ -174,8 +179,8 @@ Tag : "DefaultTag"
 * The fees are yours
 [/alert]
 
-# Collect your fees
-[As you know](https://docs.mangopay.com/marketplace-workflow/docs.mangopay.com/fees-rules/) MANGOPAY calculates its fee on the cash-in payments and a fix fee on cash-out (only for none SEPA-EUR withdrawals). The user is never directly charged by MANGOPAY. You, as the platform, are charged by MANGOPAY at the end of the month.
+## Collect your fees
+[As you know](http://demo.dev-app.net/guide/collecting-platform-fees) MANGOPAY calculates its fee on the cash-in payments and a fix fee on cash-out (only for none SEPA-EUR withdrawals). The user is never directly charged by MANGOPAY. You, as the platform, are charged by MANGOPAY at the end of the month.
 
 You will take your fees on the transfer between the buyer’s wallet and the seller’s wallet. The API only understand cents amounts. Let’s take a example:
 
@@ -196,7 +201,7 @@ Tag : "DefaultTag"
 
 The seller received 45€ and your platform just collected 5€ in the Fees-wallet created by MANGOPAY especially for your platform. You don’t have access to this Fees-wallet. At the end of the month, MANGOPAY transfers the €5 to your platform bank account minus the MANGOPAY fees.
 
-# The Seller cash out
+## The Seller cash out
 The seller just collected the 45€. He is now able to withdraw its funds. Here are the steps:
 1. Register the bank details
 2. Ask for a withdrawal
@@ -205,7 +210,7 @@ The seller just collected the 45€. He is now able to withdraw its funds. Here 
 
 **Technically speaking here are the requests:**
 
-First you have to [register the bank details](http://demo.dev-app.net/endpoints/v2#et1_bank-accounts)
+First you have to [entity_link entity="15"]register the bank details[/entity_link]
 ```
 {
 OwnerName: "Victor Hugo",
@@ -218,7 +223,7 @@ Tag: "custom tag"
 }
 ```
 
-Now you can [Ask for a withdrawal](http://demo.dev-app.net/endpoints/v2#e228_create-a-payout)
+Now you can [entity_link entity="228"]Ask for a withdrawal[/entity_link]
 ```
 {
 Tag:"custom tag",

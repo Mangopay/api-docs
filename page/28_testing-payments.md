@@ -1,6 +1,8 @@
+# How to run and test payments
+
 In the Sandbox environment, you can use the following test data to simulate a transaction:
 
-# Visa/MC
+## Visa/MC
 **For payments under 100€ you can use these cards:**
 
 * N°: 4706750000000009
@@ -53,7 +55,7 @@ In the Sandbox environment, you can use the following test data to simulate a tr
 **Error Codes Triggers**
 With the Visa/Mastercard credit cards, you can trigger specific error codes given on the [error codes page](http://demo.dev-app.net/guide/errors).
 
-# Maestro
+## Maestro
 All Maestro payments require 3DS
 * N°: 3012340000000000
 * Expiry: Any date in the future
@@ -65,22 +67,22 @@ All Maestro payments require 3DS
 
 **You can only use these cards with the password ″MAES123″ (this is different to the Visa/Mastercard and BCMC one!). If you put a wrong password the card will be blocked**
 
-# Diners
+## Diners
 * N°: 30123456789001
 * Expiry: Any date in the future
 * CSC: 123
 
-# Masterpass
+## Masterpass
 Choose « Masterpass » from the list and then:
 * Login : joe.test@email.com
 * Password : abc123
 * Pet name : fido
 
-# ELV
+## ELV
 * Account number: 0010739408
 * Bank code: 86055592
 
-# Giropay
+## Giropay
 Step 1
 * BIC : TESTDETT421
 * IBAN : DE46940594210000012345
@@ -92,22 +94,22 @@ Step 2
 Step 3
 * Any 6 digits
 
-# Sofort
+## Sofort
 * Bank code: 88888888
 * Country of buyer’s bank:  Allemagne (‘DE’)
 * Buyer’s bank code: 123456
 * Buyer’s bank password: 123456
 
-# P24
+## P24
 You do not need a card to test this payment method – just click on any of the bank logos and the transaction will be successful
 
-# BCMC
+## BCMC
 * N°: 67031330054610319
 * Expiry: Any date in the future
 
 **You must use the password ″BCMC123″ (this is different to the Visa/Mastercard and Diners one!). If you put a wrong password the card will be blocked**
 
-# iDeal
+## iDeal
 You do not need a specific test account to use iDeal in sandbox – just choose « ING » from the two options on the RedirectURL and the transasction will then be accepted (in production, you would then be redirected to the approriate bank to make the payment)
 Note that the following specific amounts are reserved for specific errors:
 * 2.00EUR: the transaction has been cancelled by the user (101002)
@@ -115,7 +117,7 @@ Note that the following specific amounts are reserved for specific errors:
 * 5.00EUR: Transaction Refused (101199)
 * 4.00EUR and 7.00EUR will also result in errors
 
-# PayLib
+## PayLib
 * Login : payline6.test@atos.net
 * Password : P@ylin3
 

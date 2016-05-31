@@ -1,3 +1,5 @@
+# Overview of PayIn Payment Methods
+
 The table below describes the different **PayIn methods available** with the MANGOPAY API, and which capabilities are available for each.
 
 The appropriate test cards/data can be found [here](http://demo.dev-app.net/guide/testing-payments).

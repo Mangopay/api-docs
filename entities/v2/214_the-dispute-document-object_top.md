@@ -1,0 +1,2 @@
+You need to create document in order to upload pages on this document.
+Note that dispute documents function in just the same way [KYC documents](http://demo.dev-app.net/endpoints/v2#et47_kyc-documents).

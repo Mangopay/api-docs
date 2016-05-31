@@ -1,4 +1,4 @@
-# MANGOPAY fees
+# Collecting platforms fees
 **Summary**: MANGOPAY collects 1.8% + € 0.18 fees only per cash-in transaction in €. We never charge your client, but only you. You can decide to collect your fees during the PayIn, during a Transfert or during a PayOut.
 
 **Prerequisite**: Let’s say for this example that your platform gets 10% commission and that you decide to get this fees when you do a bankwire (from the wallet to the bank account).
