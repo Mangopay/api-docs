@@ -11,3 +11,5 @@ A `Direct Debit Mandate` is an instruction between a user and a bank account whi
 1. "Invalid" will result in a failed mandate due to incorrect bank account information – note that this only works for mandates with the `Scheme` "BACS"
 2. "Successful" will result in an active mandate, however you must do a payment with this mandate for the status to be updated
 * Note that for all the mandate list methods, the usual [pagination](/guide/lists-pagination-management) and filter parameters are available, such as `BeforeDate`, `AfterDate` and `Status` and you can order by `CreationDate`
+
+[alert type="info"]Note that the language for the mandate confirmation pages and mandate PDFs is only English and French for now[/alert]

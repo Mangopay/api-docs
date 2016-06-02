@@ -6,8 +6,8 @@ With the Visa/Mastercard credit cards, you can trigger specific error codes by u
 |ResultCode|ResultMessage| More information | Test amount |
 | -------- | -------- | -------- | -------- |
 | 001999 |	Generic Operation error	| Mangopay has no information for the bank yet	| |
-| 001001 |	Unsufficient wallet balance |	The wallet balance doesn’t allow to process transaction	 |
-| 001002 |	Author is not the wallet owner |	The user ID used as Author has to be the wallet owner |	
+| 001001 |	Unsufficient wallet balance |	The wallet balance doesn’t allow to process transaction	 | |
+| 001002 |	Author is not the wallet owner |	The user ID used as Author has to be the wallet owner | |	
 | 001011 |	Transaction amount is higher than maximum permitted amount	 | | |	
 | 001012 |	Transaction amount is lower than minimum permitted amount		 | | |
 | 001013 |	Invalid transaction amount |  |		333.13 |
