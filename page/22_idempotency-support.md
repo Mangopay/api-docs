@@ -1,4 +1,4 @@
-# IDEMPOTENCY SUPPORT
+# Idempotency support
 
 All API POST requests have idempotency support – this means you can add an `Idempotency-Key` and corresponding value (that you generate on your side) to your **request header**. This then gives you two clear advantages:
 
@@ -8,9 +8,7 @@ All API POST requests have idempotency support – this means you can add an `Id
 You should know that the Idempotency Key must be between 16 and 36 characters and contain only alphanumeric characters or dashes. We strongly recommend using a GUID.
 
 Remember that using an Idempotency Key is entirely optional – if you do not use it, you will simply not have the same duplication protection that it offers and the API will function as normal.
-> **Method**: GET
-
-> **URL**: /responses/{{Idempotency-Key}}/
+[entity_preview entity="812" /]
 
 **An example of using your Idempotency Key to view the response you received (An output JSON example)**
 ```

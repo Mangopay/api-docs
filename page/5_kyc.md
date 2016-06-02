@@ -1,111 +1,59 @@
-# KYC Concept
+# KYC and compliance
 
-[KYC means "Know Your Customer"](https://en.wikipedia.org/wiki/Know_your_customer). These legal obligations are related to our license as an electronic money issuer and are neccessary in order to fight fraud, money laundering and financing of terrorism. There are 3 levels of authentication (light/regular/strong) **managed through the API** by the MANGOPAY compliance team once you sent them. This validation will let your users access a higher level (light to regular or regular to strong):
+[KYC means "Know Your Customer"](https://en.wikipedia.org/wiki/Know_your_customer) and are a set of legal obligations related to our license as an electronic money issuer and are neccessary in order to fight fraud, money laundering and financing of terrorism. There are 3 levels of validation (light, regular and strong) and the whole process of uploading documents and viewing a user's KYC level is all **managed through the API**. A higher KYC level allows a user to handle higher volumes of cash flows:
 
-* **Light Authentication**: Transactions worth less than €2,500 for **cash-in** and/or €1,000 for **cash-out** cumulated **per legal year and per user** (transfers are also counted in this equation).
-* **Regular Authentication**: Transactions worth more than €2,500 for **cash-in** and/or €1,000 for **cash-out** cumulated **per legal year and per user**.
-* **Strong Authentication**: Clients suspected of money laundering and/or terrorism and/or politically exposed persons
+* **Light validation**: Transactions worth less than €2,500 for **cash-in** and/or €1,000 for **cash-out** cumulated **per legal year and per user** (transfers are also counted in this equation)
+* **Regular validation**: Transactions worth more than €2,500 for **cash-in** and/or €1,000 for **cash-out** cumulated **per legal year and per user**
+* **Strong validation**: Clients suspected of money laundering and/or terrorism and/or politically exposed persons
+
+[alert type="info"]A user will never be blocked due to going over their allowed KYC volumes when doing a payin - it is a transfer or payout that will be blocked[/alert]
+
+To change the KYC level, you must provide certain information about the user, as well as various documents (detailed below):
+
+|Document type|Usage|
+| -------- | -------- |
+|"IDENTITY_PROOF"|ID Card or Passport <sup>(1)</sup> or driving licence for UK, USA and Canada (a passport is required outside of SEPA area)<br>In the case of a legal user, this document should refer to the individual duly empowered to act on behalf of the legal entity|
+|"ARTICLES_OF_ASSOCIATION"|Certified articles of association (Statute) - formal memorandum stated by the entrepreneurs, in which the following information is mentioned: business name, activity, registered address, shareholding…|
+|"REGISTRATION_PROOF"|Extract from the Company Register issued within the last three months<sup>(4)</sup><br>In the case of an organization or soletrader, this can be a proof of registration from the official authority|
+|"SHAREHOLDER_DECLARATION"|Send information referring to the [shareholder declaration](https://www.mangopay.com/terms/shareholder-declaration/Shareholder_Declaration-EN.pdf)|
+|"ADDRESS_PROOF"|A proof of address<sup>3</sup>|
+
 
 ## Light Authentification
-[alert type="info"]
-Up to 2500€ for cash-in per user
-
-Up to 1000€ for cash-out per user
-[/alert]
+[alert type="info"]Allows for up to 2500€ for cash-in and up to 1000€ for cash-out (per user, per year)[/alert]
 
 This is the basic information you are **required** to collect from your users in order to process payments (Cash-in / Cash-out). We cannot allow any transactions from a user who has not provided the following information:
 
 
-###For a customer (NATURAL_PERSON):
-
-* Email
-* FirstName
-* LastName
-* Country of Residence
-* Birthday
-* Nationality
-
-
-###For a business or organization (LEGAL_PERSON):
-
-* Legal Person Type (‘BUSINESS’ or ’ORGANIZATION’)
-* Business Name
-* Generic business email
-* FirstName of the legal representative
-* LastName of the legal representative
-* Birthday of the legal representative
-* Nationality of the legal representative
-* Country of residence of the legal representative
+|Person type|Required infos|Required KYC documents|
+| -------- | -------- | -------- |
+|Natural|Email - `Email`<br>First name - `FirstName`<br>Last name - `LastName`<br>Country of Residence  - `CountryOfResidence`<br>Birthday - `Birthday`<br>Nationality - `Nationality`|*None*|
+|Legal|Business Name - `Name`<br>Generic business email - `Email`<br>First name of the legal representative - `LegalRepresentativeFirstName`<br>Last name of the legal representative - `LegalRepresentativeLastName`<br>Birthday of the legal representative - `LegalRepresentativeBirthday`<br>Nationality of the legal representative - `LegalRepresentativeNationality`<br>Country of residence of the legal representative - `LegalRepresentativeCountryOfResidence`|*None*|
 
 
 ## Regular Authentification
-[alert type="info"]
-For unlimited cash-in per user
+[alert type="info"]Allows for unlimited cash-in or cash-out (per user, per year)[/alert]
 
-For unlimited cash-out per user
-[/alert]
+As well as the information for "light" level, this is the information **you are required** to collect from your users to go over the Cash-in (€2,500)  and/or Cash-out (€1,000) limits:
 
-This is the information **you are required** to collect from your users to go over the Cash-in (€2,500)  and/or Cash-out (€1,000) limits:
+|Person type|LegalPersonType|Required infos|Required KYC documents|
+| -------- | -------- | -------- | -------- |
+|Natural|n/a|Address - `Address`<br>Occupation<sup>(2)</sup> - `Occupation`<br>Income range<sup>(2)</sup> - `IncomeRange`|ID Card or Passport <sup>(1)</sup> or driving licence for UK, USA and Canada (a passport is required outside of SEPA area) - "IDENTITY_PROOF"|
+|Legal|Business|Headquarters address - `HeadquartersAddress`<br>Legal representative email - `LegalRepresentativeEmail`<br>Legal representative address - `LegalRepresentativeAddress`|"IDENTITY_PROOF"<br>"ARTICLES_OF_ASSOCIATION"<br>"REGISTRATION_PROOF"<br>"SHAREHOLDER_DECLARATION"|	
+|Legal|Organization|*As above*|"IDENTITY_PROOF"<br>"ARTICLES_OF_ASSOCIATION"<br>"REGISTRATION_PROOF"|
+|Legal|Soletrader|*As above*|"IDENTITY_PROOF"<br>"REGISTRATION_PROOF"|
 
-
-###For a customer (NATURAL_PERSON):
-
-In addition to the Light Authentication fields:
-
-* Address (declarative field)
-* ID Card or Passport (1) (Proof Of Identity) or driving licence for UK, USA and Canada
-* Passport required out of the SEPA area
-* Occupation (2) (declarative field)
-* Income Range (2) (declarative field)
-
-
-###For a business company (LEGAL_PERSON):
-
-In addition to the Light Authentication fields:
-
-* Headquarter address (declarative field)
-* Legal Representative email
-* Legal Representative Address
-* Certified articles of association (Statute) : formal memorandum stated by the entrepreneurs, in which the following information is mentioned:business name, activity, registered address, shareholding…
-* Proof of registration: Extract from the Company Register issued within the last three months (4)
-* Send the [Shareholder declaration](https://www.mangopay.com/terms/shareholder-declaration/Shareholder_Declaration-EN.pdf)
-* The ID or the passport of the individual duly empowered to act on behalf of the legal entity or driving licence for UK, USA and Canada
-* Passport required out of the SEPA area
-
-
-###For an organization (LEGAL_PERSON):
-
-In addition to the Light Authentication fields:
-
-* Headquarter address (declarative field)
-* Legal Representative email
-* Legal Representative Address
-* The ID or the passport of the individual duly empowered to act on behalf of the legal entity or driving licence for UK, USA and Canada
-* Passport required out of the SEPA area
-* Certified articles of association (Statute)
-* Proof of registration from the official authority
 
 ## Strong Authentification
-[alert type="info"]
-Client suspected of money laundering and/or terrorism and/or politically exposed persons
-[/alert]
+This KYC level is used when a user is suspected of money laundering, terrorism or for politically exposed persons. Note that this level is manual and not managed via the API.
 
-This is the information **required** for users suspected of fraud, money laundering, terrorism, politically exposed people:
+As well as the information for "light" level, this is the information we required in specific cases.
 
-
-###For a customer (NATURAL_PERSON):
-
-To be added to Light & Regular Authentication fields:
-
-* Confirmation of residence (3) (Proof Of Address)
+* For a natural user, an "ADDRESS_PROOF" is required
+* For a legal user, confirmation of bank details must be provided (this must be sent to us manually and can not be done via the API)
 
 
-###For a business or organization (LEGAL_PERSON):
-
-To be added to Light & Regular Authentication fields:
-
-* Confirmation of bank details
-
+-----
 
 
 > *(1) ID card: Front AND Back (Valid) OR Passport (Valid)*

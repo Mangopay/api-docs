@@ -4,7 +4,7 @@
 ## Workflow
 MANGOPAY highly recommends to use the following workflow for any marketplaces business. If you have specific needs which are not mentioned here please [take a tour to our desk or contact the support team](https://mangopay.desk.com/).
 
-![alt](/uploads/medias/Capture-d’écran-2014-12-01-à-10.29.47.png)
+![alt](/uploads/medias/marketplace-workflow.png)
 
 According to this diagram
 * Once a seller account is created on your application side, your server says to MANGOPAY to create a User and to automatically associate a wallet. The Seller and its seller’s wallet are created.

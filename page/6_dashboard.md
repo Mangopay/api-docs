@@ -1,6 +1,6 @@
 # MANGOPAY Dashboard
 
-The MANGOPAY Dashboard is a visual interface which provides full access to all your activity and operations (get lists, do refunds, do payouts, etc.)! The info below presumes that you have basic knowledge of the Mangopay solution. It uses the specific Mangopay vocabulary so if you are unfamiliar with this, please [have a look here](https://mangopay.desk.com/customer/portal/articles/1631891-glossary).
+The MANGOPAY Dashboard is a visual interface which provides full access to all your activity and operations (get lists, do refunds, do payouts, etc.)! The info below presumes that you have basic knowledge of the Mangopay solution.
 
 Please, be careful with your access credentials. In case you think someone has access who shouldn’t, please ask support@mangopay.com to regenerate your login info.
 

@@ -1,0 +1,1 @@
+**Note that you can fully customise the design of your payment page** - more info [here](/guide/customising-the-design).
