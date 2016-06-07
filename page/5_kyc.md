@@ -43,6 +43,7 @@ As well as the information for "light" level, this is the information **you are 
 |Legal|Organization|*As above*|"IDENTITY_PROOF"<br>"ARTICLES_OF_ASSOCIATION"<br>"REGISTRATION_PROOF"|
 |Legal|Soletrader|*As above*|"IDENTITY_PROOF"<br>"REGISTRATION_PROOF"|
 
+[alert type="info"]Note that you can change the `LegalPersonType` once it has been set (although if the user doesn't have the required KYC docs for the new value as per the table above, their KYC level will be downgraded as you would expect)[/alert]
 
 ## Strong Authentification
 This KYC level is used when a user is suspected of money laundering, terrorism or for politically exposed persons. Note that this level is manual and not managed via the API.

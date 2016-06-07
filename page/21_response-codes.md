@@ -1,4 +1,16 @@
-# API formats and response codes
+# API overview
+We provide two environments - one for your live production usage, and one fully functional and free sandbox environment for testing and integration usage:
+* **Production:** https://api.mangopay.com
+* **Sandbox:** https://api.sandbox.mangopay.com
+
+### How to use the MANGOPAY REST API
+We designed the Mangopay API in a very RESTful way, so that your user experience is simple and straightforward ([Wikipedia](https://en.wikipedia.org/wiki/Representational_state_transfer)). You are able to:
+
+* Submit data requires an **HTTP POST** request
+* Retrieve data requires an **HTTP GET** request
+* Change data requires an **HTTP PUT** request
+
+Requests must be sent using `Content-Type` "application/json". The request and response body encoding is always UTF-8.
 
 ## Formats used
 **Dates**
@@ -14,15 +26,6 @@ All monetary amounts are given as integer numbers in cents (by default eurocents
 You can currently pay and wire funds in these currencies: EUR, USD, GBP, PLN, CHF, NOK, SEK, DKK
 
 The [ISO_4217](https://en.wikipedia.org/wiki/ISO_4217) format is expected
-
-### How to use the MANGOPAY REST API
-We designed the Mangopay API in a very RESTful way, so that your user experience is simple and straightforward (Wikipedia). You are able to:
-
-* Submit data requires an **HTTP POST** request
-* Retrieve data requires an **HTTP GET** request
-* Change data requires an **HTTP PUT** request
-
-Requests must be sent using `Content-Type` "application/json". The request and response body encoding is always UTF-8.
 
 ## Response codes
 The following HTTP codes are used by the API to respond to requests:

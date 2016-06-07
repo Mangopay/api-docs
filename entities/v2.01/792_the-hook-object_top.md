@@ -5,7 +5,7 @@ Once setup, hook notifications allow us to make a request to a specific URL on y
 * Changing the URL for a hook will not reset your failure count though
 * The URL that we hook **must respond with a 200 status code within 2 seconds** – otherwise we will consider the hook a failure
 * You are **strongly advised** to do a GET on the resource to check its Status (to ensure the Event is still relevant, but also to ensure the hook is authentic)
-* You can also view and manage your Hook notifications from the new MANGOPAY Dashboard.
+* You can also view and manage your Hook notifications from the new MANGOPAY Dashboard. You have the possibility to test the hook to see if it is working well. Note that when setting up a new hook, then when saving it a test is launch automatically.
 
 Notification format: http://www.your-site.com?EventType=`EventId`&RessourceId=`ResourceId`&Date=`Timestamp`
 
