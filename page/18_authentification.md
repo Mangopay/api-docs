@@ -1,15 +1,15 @@
-# Authentification
+# Authentication
 
 There are two ways to authenticate and communicate with MANGOPAY:
 * **OAuth 2.0**: simple to implement, it has a very high level of security
-* **Basic Access Authentification**, which is a fast way to implement our API. However, this presents an average security level
+* **Basic Access Authentication**, which is a fast way to implement our API. However, this presents an average security level
 
 **Remark**: the two methods only work over HTTPS.
 
 
-## Basic Access Authentification
+## Basic Access Authentication
 
-To connect to the API with a standard Basic Access Authentification, the user sends the server authentification credentials thanks to the Authorization Header. The Authorization Header is constructed as follows:
+To connect to the API with a standard Basic Access Authentication, the user sends the server Authentication credentials thanks to the Authorization Header. The Authorization Header is constructed as follows:
 
 1. Username and password are combined into a string "username:password"
 2. The resulting [string](https://en.wikipedia.org/wiki/String_literal) is then encoded using [Base64](https://en.wikipedia.org/wiki/Base64)
@@ -26,7 +26,7 @@ Here is an example:
 With this Authorization Header, you can communicate with our service.
 
 **Security Level**
-Using Basic Authentification represents unnecessary level of risk since the Passphrase is transmitted in each and every call. This is the reason why we want to limit its exposure by using the OAuth 2.0 Authorization method.
+Using Basic Authentication represents unnecessary level of risk since the Passphrase is transmitted in each and every call. This is the reason why we want to limit its exposure by using the OAuth 2.0 Authorization method.
 
 Resource: A base64 encoder : http://www.motobit.com/util/base64-decoder-encoder.asp
 
@@ -34,7 +34,7 @@ Resource: A base64 encoder : http://www.motobit.com/util/base64-decoder-encoder.
 
 ## OAuth 2.0 : Client Credentials Grant
 
-To use this second method , you first need to setup the Authentification Header with the Basic Access Authentication method. You will then focus on obtaining a token with OAuth 2.0.
+To use this second method , you first need to setup the Authentication Header with the Basic Access Authentication method. You will then focus on obtaining a token with OAuth 2.0.
 
 **Once you have your Authorization Header, here is the request you have to make:**
 > **POST**: /v2/oauth/token

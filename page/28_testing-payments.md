@@ -1,76 +1,39 @@
 # How to run and test payments
 
-In the Sandbox environment, you can use the following test data to simulate a transaction:
+In the Sandbox environment, you can use the following test data to simulate a transaction.  Note that you can trigger specific error codes using specific amounts - see the [error codes page](/guide/errors) for more info.
+[alert type="info]For all cards, the expiry date can be any month/year in the future and the CSV (the three numbers on the back of the card) can be any three numbers[/alert]
+
 
 ## Visa/MC
 **For payments under 100€ you can use these cards:**
-
-* N°: 4706750000000009
-* Expiry: Any date in the future
-* CSC: 123
-
-* N°: 4706750000000033
-* Expiry: Any date in the future
-* CSC: 123
-
-* N°: 4706750000000025
-* Expiry: Any date in the future
-* CSC: 123
-
-* N°: 4706750000000017
-* Expiry: Any date in the future
-* CSC: 123
+* 4706750000000009
+* 4706750000000033
+* 4706750000000025
+* 4706750000000017
 
 **For payments with 3D Secure you can use these cards:**
 
-3D Secure starts from 100€. Therefore, on Sandbox environment, all payments over 100€ has to be processed with one of the following cards:
+3D Secure starts from 100€. Therefore in the Sandbox environment, all payments over 100€ must be processed with one of the following cards:
+* 3569990000000132
+* 3569990000000157
 
-* N°: 3569990000000132
-* Expiry: Any date in the future
-* CSC: 123
-* N°: 3569990000000157
-* Expiry: Any date in the future
-* CSC: 123
-
-**You can only use these cards with the password ″secret3″ (is different from the BCMC and Diners one!). If you put a wrong password the card will be blocked**
+[alert type="danger"]You can only use these cards with the password ″secret3″ (is different from the BCMC and Diners one!). If you put a wrong password the card will be blocked[/alert]
 
 **In order to test the liability shift, you can use these cards:**
-
-* N°: 4970100000000154
-* Expiry: Any date in the future
-* CSC: 123
-
-* N°: 4970101122334422
-* Expiry: Any date in the future
-* CSC: 123
-
-* N°: 4970101122334406
-* Expiry: Any date in the future
-* CSC: 123
-
-* N°: 4970101122334414
-* Expiry: Any date in the future
-* CSC: 123
-
-**Error Codes Triggers**
-With the Visa/Mastercard credit cards, you can trigger specific error codes given on the [error codes page](/guide/errors).
+* 4970100000000154
+* 4970101122334422
+* 4970101122334406
+* 4970101122334414
 
 ## Maestro
 All Maestro payments require 3DS
-* N°: 3012340000000000
-* Expiry: Any date in the future
-* CSC: not required
+* 3012340000000000
+* 3012349999999999
 
-* N°: 3012349999999999
-* Expiry: Any date in the future
-* CSC: not required
-
-**You can only use these cards with the password ″MAES123″ (this is different to the Visa/Mastercard and BCMC one!). If you put a wrong password the card will be blocked**
+[alert type="danger"]You can only use these cards with the password ″MAES123″ (this is different to the Visa/Mastercard and BCMC one!). If you put a wrong password the card will be blocked[/alert]
 
 ## Diners
-* N°: 30123456789001
-* Expiry: Any date in the future
-* CSC: 123
+* 30123456789001
 
 ## Masterpass
 Choose "Masterpass" from the list and then:
@@ -83,15 +46,15 @@ Choose "Masterpass" from the list and then:
 * Bank code: 86055592
 
 ## Giropay
-Step 1
+*Step 1*
 * BIC : TESTDETT421
 * IBAN : DE46940594210000012345
 
-Step 2
+*Step 2*
 * Id: sepatest1
 * BIN: any 5 digits
 
-Step 3
+*Step 3*
 * Any 6 digits
 
 ## Sofort
@@ -104,10 +67,9 @@ Step 3
 You do not need a card to test this payment method – just click on any of the bank logos and the transaction will be successful
 
 ## BCMC
-* N°: 67031330054610319
-* Expiry: Any date in the future
+* 67031330054610319
 
-**You must use the password ″BCMC123″ (this is different to the Visa/Mastercard and Diners one!). If you put a wrong password the card will be blocked**
+[alert type="danger"]You must use the password ″BCMC123″ (this is different to the Visa/Mastercard and Diners one!). If you put a wrong password the card will be blocked[/alert]
 
 ## iDeal
 You do not need a specific test account to use iDeal in sandbox – just choose "ING" from the two options on the RedirectURL and the transasction will then be accepted (in production, you would then be redirected to the approriate bank to make the payment)

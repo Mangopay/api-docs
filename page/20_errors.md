@@ -55,11 +55,13 @@ With the Visa/Mastercard credit cards, you can trigger specific error codes by u
 |ResultCode|ResultMessage | More information | Test amount |
 | -------- | -------- | -------- | -------- |
 | 009999 | Browser does not support making cross-origin Ajax calls |  | 333.57 |
-| 001599 | Token processing error | Getting the token from Payline failed |  |
-| 101699 | CardRegistration error | Finishing card registration with MANGOPAY API failed |  |
-| 105204 | CVV_FORMAT_ERROR |  |  |
-| 105203 | PAST_EXPIRY_DATE_ERROR or EXPIRY_DATE_FORMAT_ERROR |  |  |
-| 105202 | CARD_NUMBER_FORMAT_ERROR |  |  |
+| 001597 | An HTTP request failed| | |
+| 001598 | A cross-origin HTTP request failed| | |
+| 001599 | Token processing error | Getting the token from Payline failed as no token data was received - most likely, the HTTP call failed for some reason - a timeout or anti-virus/plugin/extension may have blocked it |  |
+| 101699 | CardRegistration should return a valid JSON response | Finishing card registration with MANGOPAY API failed as a valid JSON response wasn't received for some reason |  |
+| 105204 | CVV_FORMAT_ERROR | The CVV is missing or not the required the length |  |
+| 105203 | PAST_EXPIRY_DATE_ERROR or EXPIRY_DATE_FORMAT_ERROR |The expiry date is not in the future  |  |
+| 105202 | CARD_NUMBER_FORMAT_ERROR | The card number is not a valid format|  |
 
 ## Transaction Refused
 |ResultCode|ResultMessage | More information | Test amount |
@@ -69,7 +71,7 @@ With the Visa/Mastercard credit cards, you can trigger specific error codes by u
 | 101103 | Transaction refused by the terminal |  | 333.58 |
 | 101104 | Transaction refused by the bank (card limit reached) |  | 333.60 |
 | 101105 | The card has expired |  |  |
-| 101106 | The card is inactive | The card has not been well registrated in Mangopay or the first operation (pre-authorisation or Payin) has failed. So not it is unusable |  |
+| 101106 | The card is inactive | The card is not active accourding to the bank and can therefore not be used |  |
 | 101410 | The card is not active | The card has not been disabled on Mangopay and is no longer useable |  |
 | 101111 | Maximum number of attempts reached | Too much attempts for the same transaction | 333.38 |
 | 101112 | Maximum amount exceeded | This is a card limitation on spent amount |  |
@@ -131,7 +133,7 @@ With the Visa/Mastercard credit cards, you can trigger specific error codes by u
 |ResultCode|ResultMessage | More information | Test amount |
 | -------- | -------- | -------- | -------- |
 | 009103 | PSP configuration error |  | 333.03 |
-| 009199 | PSP technical error | The error code is returned in the following cases: Card is not supported by Mangopay // Amount is higher than the maximum amount per transaction // Operation doesn’t fit to your Mangopay account settings // Use of a non-3DS test card for a payment which requires 3DS | 333.94 |
+| 009199 | PSP technical error | The error code is returned in the following cases: <ul><li>Card is not supported by Mangopay</li><li>Amount is higher than the maximum amount per transaction</li><li>Operation doesn’t fit to your Mangopay account settings </li><li>Use of a non-3DS test card for a payment which requires 3DS</li></ul> | 333.94 |
 | 009499 | Bank technical error |  | 333.91 |
 | 009999 | Technical error |  |  |
 | 009101 | PSP timeout please try later |  |  |
