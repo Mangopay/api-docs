@@ -41,28 +41,6 @@ With the Visa/Mastercard credit cards, you can trigger specific error codes by u
 | 105103 | Invalid PIN code |  | 333.55 |
 | 105104 | Invalid PIN format |  |  |
 
-## Token Input errors
-|ResultCode|ResultMessage | More information |
-| -------- | -------- | -------- |
-| 105299 | Token input Error | This is a generic error meaning that we got an error when submitting the token to the bank. It is usually returned because there was a too long time between the card registration request and the first action done with this card. Indeed, you have 20min maximum to create the first Pre-auth or Payin |
-| 105202 | Card number: invalid format | This error is returned in case the card number formate is wrong (on card registration) |
-| 105203 | Expiry date: missing or invalid format | This error is returned in case the expiry date is wrong (on card registration) |
-| 105204 | CVV: missing or invalid format | This error is returned in case the CVV is wrong (on card registration) |
-| 105205 | Callback URL: Invalid format | This error is returned in case the ReturnURL is wrong on CardRegistration process |
-| 105206 | Registration data : Invalid format | This error is returned in case the data sent to the tokenization server is not the right. You can get this error when you are trying to edit the CardRegistration Object with the RegistrationData(got from the tokenization server) |
-
-## JS Kit Specific errors
-|ResultCode|ResultMessage | More information | Test amount |
-| -------- | -------- | -------- | -------- |
-| 009999 | Browser does not support making cross-origin Ajax calls |  | 333.57 |
-| 001597 | An HTTP request failed| | |
-| 001598 | A cross-origin HTTP request failed| | |
-| 001599 | Token processing error | Getting the token from Payline failed as no token data was received - most likely, the HTTP call failed for some reason - a timeout or anti-virus/plugin/extension may have blocked it |  |
-| 101699 | CardRegistration should return a valid JSON response | Finishing card registration with MANGOPAY API failed as a valid JSON response wasn't received for some reason |  |
-| 105204 | CVV_FORMAT_ERROR | The CVV is missing or not the required the length |  |
-| 105203 | PAST_EXPIRY_DATE_ERROR or EXPIRY_DATE_FORMAT_ERROR |The expiry date is not in the future  |  |
-| 105202 | CARD_NUMBER_FORMAT_ERROR | The card number is not a valid format|  |
-
 ## Transaction Refused
 |ResultCode|ResultMessage | More information | Test amount |
 | -------- | -------- | -------- | -------- |
@@ -93,28 +71,51 @@ With the Visa/Mastercard credit cards, you can trigger specific error codes by u
 ## Tokenization / Card registration errors
 |ResultCode|ResultMessage | More information |
 | -------- | -------- | -------- |
-| 001599 | Token processing error | The token has not been created |
+| 001599 | Token processing error | The token has not been created as there was a problem - check that you sent all the correct parameters. |
+| 105299 | Token input Error | This is a generic error meaning that we got an error when submitting the token to the bank. It is usually returned because there was a too long time between the card registration request and the first action done with this card. Indeed, you have 20min maximum to create the first Pre-auth or Payin |
+| 105202 | Card number: invalid format | This error is returned in case the card number formate is wrong (on card registration) |
+| 105203 | Expiry date: missing or invalid format | This error is returned in case the expiry date is wrong (on card registration) |
+| 105204 | CVV: missing or invalid format | This error is returned in case the CVV is wrong (on card registration) |
+| 105205 | Callback URL: Invalid format | This error is returned in case the ReturnURL is wrong on CardRegistration process |
+| 105206 | Registration data : Invalid format | This error is returned in case the data sent to the tokenization server is not the right. You can get this error when you are trying to edit the CardRegistration Object with the RegistrationData(got from the tokenization server) |
 
-## KYC errors
+The following errors may be received by our PSP when POSTing the card data to the `CardRegistrationURL`
+
+|ResultCode|ResultMessage | More information | Test amount |
+| -------- | -------- | -------- | -------- |
+| 02625 | Invalid card number |  |  |
+| 02626 | Invalid date. Use mmdd format |  |  |
+| 02627 | Invalid CCV number |  |  |
+| 02628 | Transaction refused | Invalid URL return field |  |
+| 02101 | Internal Error | There is an issue on the tokenization server (PSP side). Please check the resolution on http://status.mangopay.com/ |  |
+| 02632 | Method GET is not allowed | Your Payment form has to use POST method on Tokenization Server |  |
+| 09101 | Username/Password is incorrect |  |  |
+| 09102 | Account is locked or inactive |  |  |
+| 01902 | This card is not active |  | 333.12 |
+| 02624 | Card expired |  | 333.33 |
+| 09104 | Client certificate is disabled |  |  |
+| 09201 | You do not have permissions to make this API call |  |  |
+| 02631 | Delay exceeded | Too much time taken from the creation of the CardRegistration object to the submission of the Card Details on the Tokenizer Server |  |
+
+### Specific JS Kit card registration errors
+|ResultCode|ResultMessage | More information | Test amount |
+| -------- | -------- | -------- | -------- |
+| 009999 | Browser does not support making cross-origin Ajax calls |  | 333.57 |
+| 001597 | An HTTP request failed| | |
+| 001598 | A cross-origin HTTP request failed| | |
+| 001599 | Token processing error | Getting the token from Payline failed as no token data was received - most likely, the HTTP call failed for some reason - a timeout or anti-virus/plugin/extension may have blocked it |  |
+| 101699 | CardRegistration should return a valid JSON response | Finishing card registration with MANGOPAY API failed as a valid JSON response wasn't received for some reason |  |
+| 105204 | CVV_FORMAT_ERROR | The CVV is missing or not the required the length |  |
+| 105203 | PAST_EXPIRY_DATE_ERROR or EXPIRY_DATE_FORMAT_ERROR |The expiry date is not in the future  |  |
+| 105202 | CARD_NUMBER_FORMAT_ERROR | The card number is not a valid format|  |
+
+## KYC transaction errors
 |ResultCode|ResultMessage | More information |
 | -------- | -------- | -------- |
 | 002999 | Blocked due to a Debited User’s KYC limitations (maximum debited or credited amount reached) |  |
 | 002998 | Blocked due to the Bank Account Owner’s KYC limitations (maximum debited or credited amount reached) |  |
 
-## KYC document errors
-|RefusedReasonCode|RefusedReasonMessage | More information |
-| -------- | -------- | -------- |
-| DOCUMENT_UNREADABLE | A custom description will potentially appears into the RefusedReasonMessage field | This means Mangopay can’t read the document. The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
-| DOCUMENT_NOT_ACCEPTED | A custom description will potentially appears into the RefusedReasonMessage field | This means the document is unvalidate. The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
-| DOCUMENT_HAS_EXPIRED | A custom description will potentially appears into the RefusedReasonMessage field | This means the document has expired. The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
-| DOCUMENT_INCOMPLETE | A custom description will potentially appears into the RefusedReasonMessage field | This means Mangopay the document is incomplete. The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
-| DOCUMENT_MISSING | A custom description will potentially appears into the RefusedReasonMessage field | This means Mangopay there is no doument sent. The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
-| DOCUMENT_DO_NOT_MATCH_USER_DATA | A custom description will potentially appears into the RefusedReasonMessage field | The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
-| DOCUMENT_DO_NOT_MATCH_ACCOUNT_DATA | A custom description will potentially appears into the RefusedReasonMessage field | The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
-| SPECIFIC_CASE | A custom description will potentially appears into the RefusedReasonMessage field | The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
-| OTHER | A custom description will potentially appears into the RefusedReasonMessage field | The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
-
-## Fraud issue
+## Transaction fraud issue
 |ResultCode|ResultMessage | More information | Test amount |
 | -------- | -------- | -------- | -------- |
 | 008999 | Fraud policy error |  |  |
@@ -138,33 +139,10 @@ With the Visa/Mastercard credit cards, you can trigger specific error codes by u
 | 009999 | Technical error |  |  |
 | 009101 | PSP timeout please try later |  |  |
 
-
-## Tokenization server error codes
-|ResultCode|ResultMessage | More information | Test amount |
-| -------- | -------- | -------- | -------- |
-| 02101 | Internal Error | There is an issue on the tokenization server (PSP side). Please check the resolution on http://status.mangopay.com/ |  |
-| 02632 | Method GET is not allowed | Your Payment form has to use POST method on Tokenization Server |  |
-| 09101 | Username/Password is incorrect |  |  |
-| 09102 | Account is locked or inactive |  |  |
-| 01902 | This card is not active |  | 333.12 |
-| 02624 | Card expired |  | 333.33 |
-| 09104 | Client certificate is disabled |  |  |
-| 09201 | You do not have permissions to make this API call |  |  |
-| 02631 | Delay exceeded | Too much time taken from the creation of the CardRegistration object to the submission of the Card Details on the Tokenizer Server |  |
-
-
-## Tokenization server error codes (while card registration)
-|ResultCode|ResultMessage | More information |
-| -------- | -------- | -------- |
-| 02625 | Invalid card number |  |
-| 02626 | Invalid date. Use mmdd format |  |
-| 02627 | Invalid CCV number |  |
-| 02628 | Transaction refused | Invalid URL return field |
-
 ## Payout error codes
-If your payout is successfully treated (your payout becomes SUCCEEDED), it can later be reaccredited for a variety of reasons.
-In this case, the payout stays as "SUCCEEDED" but a new transaction is created, which will be a Refund of the original Payout (in the same way you can have a refunded Payin except the difference is that its not client driven).
-In this case, as for payin refunds, you’ll have 2 fields within `RefundReason` -> `RefundReasonMessage` and `RefundReasonType`. Possible `RefundReason` are: BANKACCOUNT_INCORRECT, BANKACCOUNT_HAS_BEEN_CLOSED, OWNER_DOT_NOT_MATCH_BANKACCOUNT, WITHDRAWAL_IMPOSSIBLE_ON_SAVINGS_ACCOUNTS. This will usually be accompanied by a custom message in the `RefundReasonMessage` field
+* If your payout is successfully treated (your payout becomes SUCCEEDED), it can later be reaccredited for a variety of reasons.
+* In this case, the payout stays as "SUCCEEDED" but a new transaction is created, which will be a Refund of the original Payout (in the same way you can have a refunded Payin except the difference is that its not client driven).
+* In this case, as for payin refunds, you’ll have 2 fields within `RefundReason` -> `RefundReasonMessage` and `RefundReasonType`. Possible `RefundReason` are: BANKACCOUNT_INCORRECT, BANKACCOUNT_HAS_BEEN_CLOSED, OWNER_DOT_NOT_MATCH_BANKACCOUNT, WITHDRAWAL_IMPOSSIBLE_ON_SAVINGS_ACCOUNTS. This will usually be accompanied by a custom message in the `RefundReasonMessage` field
 
 |ResultCode|ResultMessage | More information |
 | -------- | -------- | -------- |
@@ -176,3 +154,16 @@ In this case, as for payin refunds, you’ll have 2 fields within `RefundReason`
 | 121005 | Refused due to the Fraud Policy | -------- |
 | 002998 | Blocked due to the Bank Account Owner’s KYC limitations (maximum debited or credited amount reached) | The bank account needs to be KYC verified ([more info](/guide/kyc)) |
 | 002999 | Blocked due to a Debited User’s KYC limitations (maximum debited or credited amount reached) | One of the user’s who has contributed to the wallet being debited needs to be KYC verified ([more info](/guide/kyc)) |
+
+## KYC document errors
+|RefusedReasonCode|RefusedReasonMessage | More information |
+| -------- | -------- | -------- |
+| DOCUMENT_UNREADABLE | A custom description will potentially appears into the RefusedReasonMessage field | This means Mangopay can’t read the document. The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
+| DOCUMENT_NOT_ACCEPTED | A custom description will potentially appears into the RefusedReasonMessage field | This means the document is unvalidate. The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
+| DOCUMENT_HAS_EXPIRED | A custom description will potentially appears into the RefusedReasonMessage field | This means the document has expired. The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
+| DOCUMENT_INCOMPLETE | A custom description will potentially appears into the RefusedReasonMessage field | This means Mangopay the document is incomplete. The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
+| DOCUMENT_MISSING | A custom description will potentially appears into the RefusedReasonMessage field | This means Mangopay there is no doument sent. The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
+| DOCUMENT_DO_NOT_MATCH_USER_DATA | A custom description will potentially appears into the RefusedReasonMessage field | The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
+| DOCUMENT_DO_NOT_MATCH_ACCOUNT_DATA | A custom description will potentially appears into the RefusedReasonMessage field | The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
+| SPECIFIC_CASE | A custom description will potentially appears into the RefusedReasonMessage field | The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
+| OTHER | A custom description will potentially appears into the RefusedReasonMessage field | The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |

@@ -11,6 +11,8 @@ How PreAuthorization + validation (Pay-In) works?
 * The Pay-In amount has to be less than or equal to the amount authorized.
 * The Preauthorization can be used only once, even if the payin amount is less than the preauthorized amount.
 
+**Remember that you must include the "Powered by MANGOPAY" banner on your payment page - you can download it [here](https://www.mangopay.com/terms/powered-by-mangopay.png)**
+
 [alert type="info"]There is a KYC limit on Pay-Ins in order to fight fraud, money laundering and financing of terrorism. You have to send some documents through the API. [Please check the rules to go over the limits](/guide/kyc)[/alert]
 
 [alert type="info"]In Italy, Greece and Spain, the pre-authorization has a particular running. In fact, the pre-authorized amount is debited from the bank account. Pre-authorized funds are stored by the bank. The user will get his/her funds back within 7 days.

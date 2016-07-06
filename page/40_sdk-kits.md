@@ -39,4 +39,4 @@ The code examples given in this documentation site use these official SDKs.
 
 ### Android
 * [Github](https://github.com/Mangopay/cardregistration-android-kit)
-* [Bintray](https://bintray.com/octa-george/maven/cardregistration-android-kit/view)
+* [Bintray](https://bintray.com/mangopay/mangopay2-java-sdk/cardregistration-android-kit/view)

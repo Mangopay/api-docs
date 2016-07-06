@@ -1,4 +1,4 @@
-# Customize web Templates
+# Customize web templates
 
 PayIns via Web interface allow you to provide a property called `TemplateURLOptions` to customize your payment pages for credit cards, Sofort and ELV. Giropay does not allow to iFramed its payment page. So you cannot use this Template method with Giropay.
 
@@ -16,9 +16,10 @@ You will need to create your own skeleton (page markup) by positioning a zone to
 * The URL must **accept POST request**
 * The URL must **not to be protected** by a password (htaccess, etc.)
 * Your server must be compatible with Java v1.6
-* These rules apply to Sandbox and production environments.
+* These rules apply to Sandbox and Production environments
+* Your domain and SSL certificate **must get a "A" level** [here](https://www.ssllabs.com/ssltest/)
 
-[alert type= »notice » close= »false »]Your domain and SSL certificate** must get a "A" level** here: https://www.ssllabs.com/ssltest/[/alert]
+[alert type="info"]You must include the "Powered by MANGOPAY" banner on your payment page - you can download it [here](https://www.mangopay.com/terms/powered-by-mangopay.png)[/alert]
 
 ## Payline template implementation
 This skeleton can be called for all payments, but it can also be generated dynamically, according to the data which is relevant for each transaction. In this case, the URL could look like this:

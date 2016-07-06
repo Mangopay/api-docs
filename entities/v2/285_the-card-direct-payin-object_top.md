@@ -6,6 +6,7 @@
 
 [alert type="info"]There is a KYC limit on Pay-Ins in order to fight fraud, money laundering and financing of terrorism. You have to send some documents through the API. [Please check the rules to go over the limits](/guide/kyc)[/alert]
 
+**Remember that you must include the "Powered by MANGOPAY" banner on your payment page - you can download it [here](https://www.mangopay.com/terms/powered-by-mangopay.png)**
 # Payment Flow
 Here is the CardRegistration flow (tokenization) then the Direct PayIn:
 ![alt](/uploads/medias/SchemeCardRegistration.png)
