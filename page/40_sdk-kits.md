@@ -21,7 +21,7 @@ The code examples given in this documentation site use these official SDKs.
 
 ### Ruby
 * [Github](https://github.com/Mangopay/mangopay2-ruby-sdk)
-* [Ruby Gems](https://bintray.com/mangopay/mangopay2-java-sdk/mangopay2-java-sdk/view)
+* [Ruby Gems](https://rubygems.org/gems/mangopay/versions/3.0.19)
 
 ### Node.js
 * [Github](https://github.com/Mangopay/mangopay2-nodejs-sdk)
