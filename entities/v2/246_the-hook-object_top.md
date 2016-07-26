@@ -7,9 +7,11 @@ Once setup, hook notifications allow us to make a request to a specific URL on y
 * You are **strongly advised** to do a GET on the resource to check its Status (to ensure the Event is still relevant, but also to ensure the hook is authentic)
 * You can also view and manage your Hook notifications from the new MANGOPAY Dashboard. You have the possibility to test the hook to see if it is working well. Note that when setting up a new hook, then when saving it a test is launch automatically.
 
-Notification format: http://www.your-site.com?EventType=`EventId`&RessourceId=`ResourceId`&Date=`Timestamp`
+**Notification format:** ...your-site.com?EventType=`EventId`&RessourceId=`ResourceId`&Date=`Timestamp`
 
-Example :
+[alert type="info"]Note that in the URL parameters, `RessourceId` has two "s", and not one as in the API objects - this is a mistake and will be corrected in a future API version[/alert]
+
+**Example:**
 If you want to create a notification for the event type "KYC_SUCCEEDED" on your URL: "http://www.mynotificationurl.com" you will recieve this ping: http://www.mynotificationurl.com?EventType=KYC_SUCCEEDED&RessourceId=1309853&Date=1397037093
 
-A useful cloud tool for testing notifications in sandbox is requestb.in.
+A useful cloud tool for testing notifications in sandbox is [requestb.in](http://requestb.in/).

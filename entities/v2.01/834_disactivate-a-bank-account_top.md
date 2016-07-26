@@ -1,0 +1,1 @@
+[alert type="info"]Note that once deactivated, a bank account can't be reactivated afterwards[/alert]

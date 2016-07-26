@@ -101,6 +101,7 @@ The following errors may be received by our PSP when POSTing the card data to th
 |ResultCode|ResultMessage | More information | Test amount |
 | -------- | -------- | -------- | -------- |
 | 009999 | Browser does not support making cross-origin Ajax calls |  | 333.57 |
+| 001596 | An HTTP request was blocked by the User's antivirus | Getting the token from Payline failed due to the HTTP call  being  blocked by an anti-virus/plugin/extension - for example, this is known to happen with Kaspersky if the "Safe Money" option is activated |  |
 | 001597 | An HTTP request failed| | |
 | 001598 | A cross-origin HTTP request failed| | |
 | 001599 | Token processing error | Getting the token from Payline failed as no token data was received - most likely, the HTTP call failed for some reason - a timeout or anti-virus/plugin/extension may have blocked it |  |
