@@ -4,32 +4,29 @@ There are two ways to authenticate and communicate with MANGOPAY:
 * **OAuth 2.0**: simple to implement, it has a very high level of security
 * **Basic Access Authentication**, which is a fast way to implement our API. However, this presents an average security level
 
-**Remark**: the two methods only work over HTTPS.
+**Note that the two methods only work over HTTPS.**
 
 
 ## Basic Access Authentication
 
-To connect to the API with a standard Basic Access Authentication, the user sends the server Authentication credentials thanks to the Authorization Header. The Authorization Header is constructed as follows:
+To connect to the API with a standard Basic Access Authentication, the client sends the server Authentication credentials using the `Authorization` header. This constructed as follows:
 
-1. Username and password are combined into a string "username:password"
-2. The resulting [string](https://en.wikipedia.org/wiki/String_literal) is then encoded using [Base64](https://en.wikipedia.org/wiki/Base64)
-3. The authorization method is given by adding “Basic “ to the encoded string (please note the space between Basic and the string)
+1. `ClientId` and `Passphrase` are combined into a string "`ClientId`:`Passphrase`"
+2. The resulting string is then encoded using [Base64](https://en.wikipedia.org/wiki/Base64) ([here](http://www.motobit.com/util/base64-decoder-encoder.asp) is an online tool)
+3. The authorization method is given by adding "Basic " to the encoded string (please note the space between Basic and the string)
 
 Please see the Wikipedia [article](https://en.wikipedia.org/wiki/Basic_access_authentication) for more info.
 
 Here is an example:
 
-| Username | Password | String to encode in Base64 | String encoded | Authorization Header |
+| `ClientId` | `Passphrase` | String to encode in Base64 | Base64 encoded string | Authorization Header |
 | -------- | -------- | -------- | -------- | -------- |
-| Aladdin     | open sesame      | Aladdin:open sesame     | QWxhZGRpbjpvcGVuIHNlc2FtZQ==      | Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==     |
+| Aladdin     | ghsiu6hjqQjj      | Aladdin:ghsiu6hjqQjj     | QWxhZGRpbjpnaHNpdTZoanFRamo=      | Basic QWxhZGRpbjpnaHNpdTZoanFRamo=     |
 
 With this Authorization Header, you can communicate with our service.
 
 **Security Level**
-Using Basic Authentication represents unnecessary level of risk since the Passphrase is transmitted in each and every call. This is the reason why we want to limit its exposure by using the OAuth 2.0 Authorization method.
-
-Resource: A base64 encoder : http://www.motobit.com/util/base64-decoder-encoder.asp
-
+Using Basic Authentication represents unnecessary level of risk since the `Passphrase` is transmitted in each and every call. This is the reason why we want to limit its exposure by instead using the OAuth 2.0 Authorization method.
 
 
 ## OAuth 2.0 : Client Credentials Grant

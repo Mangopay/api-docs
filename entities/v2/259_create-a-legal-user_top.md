@@ -1,0 +1,1 @@
+[alert type="info"]Note that the `LegalRepresentativeBirthday` field is a timestamp, but be careful to ensure that the time is midnight UTC (otherwise a local time can be understood as 23h UTC, and therefore rendering the wrong date which will present problems when needing to validate the KYC identity)[/alert]

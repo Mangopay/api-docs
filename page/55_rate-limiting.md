@@ -1,6 +1,4 @@
 # API Rate limiting
-[alert type="info"]Note that rate limiting will be in effect from 1st August, therefore the information on this page is only relevant after this date[/alert]
-
 The API uses rate limiting to ensure the stability and reliablity for all clients, in both the production and sandbox environments. All endpoints are affected and you have a maximum amount of calls allowed in a given period:
 
 |Time period|API calls allowed|
