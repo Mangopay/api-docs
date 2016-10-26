@@ -12,7 +12,7 @@
 * Accept the contest and refund the funds you had contested (we will then refund this amount to your credit wallet)
 * Reject the contest – in which case the Dispute will be closed as you have lost
 * Ask for further documents – in this case, we will reopen the Dispute and ask you to submit further evidence – check the StatusMessage field for more info
-8. n the event you have credit following a Dispute (because you lost, or didn’t contest the full amount), you can do a [entity_link entity="237"]settlement transfer[/entity_link] to transfer funds from the original wallet to the credit wallet if you wish – this is entirely optional and will depend on your workflow whether you want to impact the original wallet or not
+8. In the event you have credit following a Dispute (because you lost, or didn’t contest the full amount), you can do a [entity_link entity="237"]settlement transfer[/entity_link] to transfer funds from the original wallet to the credit wallet if you wish – this is entirely optional and will depend on your workflow whether you want to impact the original wallet or not
 9. Any credit in your credit wallet will be deducted from your fees when you are billed each month before we send you your usual invoice
 
 ![alt](/uploads/medias/dispute_process.png)

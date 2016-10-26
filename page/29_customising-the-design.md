@@ -6,7 +6,7 @@ PayIns via Web interface allow you to provide a property called `TemplateURLOpti
 You will need to create your own skeleton (page markup) by positioning a zone to be completed by the PSP form via the API when creating a payment page. If your template isn’t displayed, it could be for these reasons:
 
 * The dynamic skeleton will need to be **hosted on your website**
-* Your **SSL certificate** has to be "real" (**not auto-signed**);
+* Your **SSL certificate** has to be "real" (**not auto-signed**) and can not be a "Let's Encrypt" type certificate either
 * Your **SSL certificate** has to contain at least the fields CN, O, OU and C (**level 2**). we recommend GeoTrust.com
 * **All the certificates** of the SSL certification chain have to be shown/sent by your server (root & intermediate certificate) which blocks the ssl handshake
 * Your certificate **common name** has to match your **host name** exactly

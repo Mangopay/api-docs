@@ -1,19 +1,22 @@
 # Authentication
 
 There are two ways to authenticate and communicate with MANGOPAY:
-* **OAuth 2.0**: simple to implement, it has a very high level of security
-* **Basic Access Authentication**, which is a fast way to implement our API. However, this presents an average security level
+* **Basic Access Authentication**: a fast way to implement our API, however this presents an average security level
+* **OAuth 2.0**: simple to implement and a very high level of security
 
-**Note that the two methods only work over HTTPS.**
+Note that the two methods and all communication with the API is only possible over HTTPS.
 
+**All API communication should be done from your server directly to our server, and not from a user's browser - otherwise your security is easily compromised**
+
+[alert type="info"]If you use [our official SDKs](/guide/sdk-kits), the authentication is handled automatically, and you therefore do not need to worry about this page[/alert]
 
 ## Basic Access Authentication
 
-To connect to the API with a standard Basic Access Authentication, the client sends the server Authentication credentials using the `Authorization` header. This constructed as follows:
+To connect to the API with a standard Basic Access Authentication, the client sends the server authentication credentials using the `Authorization` header. This is constructed as follows:
 
-1. `ClientId` and `Passphrase` are combined into a string "`ClientId`:`Passphrase`"
-2. The resulting string is then encoded using [Base64](https://en.wikipedia.org/wiki/Base64) ([here](http://www.motobit.com/util/base64-decoder-encoder.asp) is an online tool)
-3. The authorization method is given by adding "Basic " to the encoded string (please note the space between Basic and the string)
+1. `ClientId` and `Passphrase` are combined into a string separated by a colon, eg "`ClientId`:`Passphrase`"
+2. The resulting string is then encoded using [Base64](https://en.wikipedia.org/wiki/Base64) ([here](http://www.motobit.com/util/base64-decoder-encoder.asp) is an online tool to give you an example, but your favourite coding language will be able to do this programmatically)
+3. The `Authorization` header is completed by adding "Basic " to the encoded string (please note the space between Basic and the string)
 
 Please see the Wikipedia [article](https://en.wikipedia.org/wiki/Basic_access_authentication) for more info.
 
@@ -31,43 +34,34 @@ Using Basic Authentication represents unnecessary level of risk since the `Passp
 
 ## OAuth 2.0 : Client Credentials Grant
 
-To use this second method , you first need to setup the Authentication Header with the Basic Access Authentication method. You will then focus on obtaining a token with OAuth 2.0.
+To use this second method, you do a particular API call using an `Authorization` header with the Basic Access Authentication method that we just mentioned - this will give you a temporary token that you can use in all subsequent API calls until it expires.
 
-**Once you have your Authorization Header, here is the request you have to make:**
-> **POST**: /v2/oauth/token
-> 
-> HTTP/1.1
-> 
-> **Host**: server.example.com
+**Once you have your Authorization Header, here is the request you should make to generate an OAuth token:**
+> **POST**: https://api.mangopay.com/v2.01/oauth/token/ (change the subdomain to api.sandbox... to use the sandbox environment)
 > 
 > **Authorization**: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW
 > 
 > **Content-Type**: application/x-www-form-urlencoded
 > 
-> **Body**
-> 
-> grant_type=client_credentials
+> **Form data**:  grant_type=client_credentials
 
 
-**You can see in the authorization field that we used the Authorization Header produced in the Basic Access method. Making this above request, we get in response:**
-
-> HTTP/1.1 200 OK
-> 
-> **Content-Type**: application/json;charset=UTF-8
-> 
-> **Cache-Control**: no-store
-> 
-> **Pragma**: no-cache
+**You can see in the authorization field that we used the Authorization Header produced in the Basic Access method. Making this above request, we get the response:**
 
 ```
 {
-"access_token":"67b036bd007c40378d4be5a934f197e6",
-"token_type":"Bearer",
-"expires_in":3600
+   "access_token": "67b036bd007c40378d4be5a934f197e6",
+   "token_type": "Bearer",
+   "expires_in": 3600
 }
 ```
 
-We have here in the body the access_token we were looking for. It is available for 3600 sec. While it is available, you can communicate with our service by adding this “token Authorization Header” in your HTTP requests:
-Bearer 67b036bd007c40378d4be5a934f197e6
+We have here in the body the `access_token` we were looking for - from the `expires_in` in this case, it is available for 3600 seconds (although this may vary and therefore you should react accourdingly). While it is available (ie it hasn't expired), you can communicate with our service by adding this token to the `Authorization` header in your HTTP requests in a similar way for the Basic method mentioned above, however instead of adding "Basic ", we add "Bearer " - for example:
 
-Once your token has expired, you can get a new token with POST /v2/oauth/token.  Proceeding this way, you only transmit your credentials every 3600 seconds. The rest of the time, it is your “tokenized temporary credentials” that are transmitted with every call you make.
+```
+Bearer 67b036bd007c40378d4be5a934f197e6
+```
+
+Once your token has expired, you can just repeat the above step to get a new one. Operating in this way means that you only transmit your very senstive credentials (the `Passphrase`) when you need a token, and not for every single API call. The rest of the time, it is your “tokenized temporary credentials” that are transmitted with every call you make.
+
+[alert type="danger"]You **must not** create a token for every API call you do - only when your token has expired, and you need to replace it[/alert]

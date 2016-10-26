@@ -6,7 +6,7 @@
 
 **3. Send card details (Payment form)**
 
-Now you have to send to the tokenization server the fields `AccesKey`, `PreregistrationData` and the user card details (card number, expiry date and CSC) through a form posted at the `CardRegistrationURL`.
+Now you have to send to the tokenization server the fields `AccessKey`, `PreregistrationData` and the user card details (card number, expiry date and CSC) through a form posted at the `CardRegistrationURL`.
 Here are 2 PHP samples to post card details:
 
 PHP integration sample: https://github.com/MangoPay/mangopay2-php-sdk/tree/master/demos/paymentDirect

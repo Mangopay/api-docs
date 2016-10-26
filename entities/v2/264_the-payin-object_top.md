@@ -15,4 +15,5 @@ The table below describes the different **PayIn methods available** with the MAN
 | Sofort ![alt](/uploads/medias/Sofort.png) | Yes | No | No | Yes | EUR | Direct Debit |
 | ELV ![alt](/uploads/medias/elv.png) | Yes | No | No | No | EUR | Direct Debit |
 | Giropay ![alt](/uploads/medias/giropay.jpg) | Yes | No | No | Yes | EUR | Direct Debit |
+| Direct Debit ![alt](/uploads/medias/bank.png) | No | Yes | No | Yes | EUR/GBP | Direct Debit |
 | Bankwire ![alt](/uploads/medias/bank.png) | No | Yes | No | No | All | Bankwire |

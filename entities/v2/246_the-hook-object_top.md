@@ -21,8 +21,11 @@ The following EventType are available :
 * DISPUTE_CREATED, DISPUTE_SUBMITTED, DISPUTE_ACTION_REQUIRED, DISPUTE_FURTHER_ACTION_REQUIRED, DISPUTE_CLOSED, DISPUTE_SENT_TO_BANK
 * TRANSFER_SETTLEMENT_CREATED, TRANSFER_SETTLEMENT_SUCCEEDED, TRANSFER_SETTLEMENT_FAILED
 * MANDATE_CREATED, MANDATED_FAILED, MANDATE_ACTIVATED, MANDATE_SUBMITTED
+* PREAUTHORIZATION_PAYMENT_WAITING, PREAUTHORIZATION_PAYMENT_EXPIRED (**not currently available**, PREAUTHORIZATION_PAYMENT_CANCELED, PREAUTHORIZATION_PAYMENT_VALIDATED
 
-**Notification format:** ...your-site.com?EventType=`EventId`&RessourceId=`ResourceId`&Date=`Timestamp`
+**Notification format:** ...your-site.com?EventType=`EventType`&RessourceId=`RessourceId`&Date=`Timestamp` 
+
+Where the `RessourceId` is the `Id` of the object in question.
 
 [alert type="info"]Note that in the URL parameters, `RessourceId` has two "s", and not one as in the API objects - this is a mistake and will be corrected in a future API version[/alert]
 

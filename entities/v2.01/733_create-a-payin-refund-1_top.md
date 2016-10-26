@@ -2,6 +2,6 @@ A **PayIn Refund** is a request to reimburse a user on their payment card. The m
 * Minimum amount to refund is 1€.
 * If you're doing a partial `Refund`, note that you can only refund the same amount on the same transaction once per day (this is to prevent unintended duplicate refunds). After 24h you can do another refund of the **same amount** on the same transaction. If it is a different amount on the same transaction, there is not this limit. 
 
-You **can** refund [entity_link entity="278"]Direct Payin[/entity_link], some [entity_link entity="269"]WEB Payins[/entity_link] and a [entity_link entity="279"]Preauthorization Payin[/entity_link].
+You **can** refund [entity_link entity="278"]Card Direct Payins[/entity_link],  [entity_link entity="269"]Card Web Payins[/entity_link],  [entity_link entity="279"]Preauthorization Payins[/entity_link],  [entity_link entity="288"]Direct-Debit Web Payins[/entity_link] (except ELV) and [entity_link entity="289"]Direct-Debit Direct Payins[/entity_link]. Note that for Direct-Debit Direct Payins, you are limited to 5 refunds for each Payin.
 
 [alert type="info"]If you do not specify `DebitedFunds` and `Fees` parameters, it will automatically fully refund the `PayIn`. However if you *do* provide one or the other, you must provide both. Note that `Fees` must be negative if you wish to refund them - adding a positive value for the `Fees` is a way to charge your customers for the `Refund` (in the same way you might for a `PayIn`, `Transfer` or any other `Transaction`[/alert]

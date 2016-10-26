@@ -44,7 +44,7 @@ With the Visa/Mastercard credit cards, you can trigger specific error codes by u
 ## Transaction Refused
 |ResultCode|ResultMessage | More information | Test amount |
 | -------- | -------- | -------- | -------- |
-| 101101 | Transaction refused by the bank (Do not honor) | The error "Do not honor" is a message from the bank. You could get it for several raisons: Maximum amount spent per month has been reached on this card // Maximum amount spent on internet per month has been reached on this card // No more funds on bank account | 333.05 |
+| 101101 | Transaction refused by the bank (Do not honor) | The error "Do not honor" is a message from the bank. You could get it for several raisons: Maximum amount spent per month has been reached on this card // Maximum amount spent on internet per month has been reached on this card // No more funds on bank account | 333.05 (or use the CVV code 999) |
 | 101102 | Transaction refused by the bank (Amount limit) | You will get this error if the user reached a bank amount limit. It could be: Maximum pre authorized amount reached // Maximum amount spent per month has been reached on this card // Maximum amount spent on internet per month has been reached on this card | 333.51 |
 | 101103 | Transaction refused by the terminal |  | 333.58 |
 | 101104 | Transaction refused by the bank (card limit reached) |  | 333.60 |

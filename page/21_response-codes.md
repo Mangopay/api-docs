@@ -14,7 +14,7 @@ Requests must be sent using `Content-Type` "application/json". The request and r
 
 ## Formats used
 **Dates**
-All date and time values are displayed as integer numbers and represent the number of seconds since the Unix Epoch (January 1 1970 00:00:00 GMT), like [PHP time()](http://php.net/manual/en/function.time.php) function. The date/time property type in the specification is specified as “Time”, the actual JSON type is “Number”.
+All date and time values are displayed as integer numbers and represent the number of seconds since the Unix Epoch (January 1 1970 00:00:00 UTC), like [PHP time()](http://php.net/manual/en/function.time.php) function. The date/time property type in the specification is specified as “Time”, the actual JSON type is “Number”.
 
 **Case Sensitive Parameters**
 The field and parameter names in requests are case sensitive.

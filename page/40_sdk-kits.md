@@ -36,6 +36,7 @@ The code examples given in this documentation site use these official SDKs.
 
 ### iOS
 * [Github](https://github.com/Mangopay/cardregistration-ios-kit)
+* [Cocoapods](https://cocoapods.org/?q=mangopay)
 
 ### Android
 * [Github](https://github.com/Mangopay/cardregistration-android-kit)
