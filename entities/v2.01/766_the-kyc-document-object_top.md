@@ -4,3 +4,5 @@ You need to create document in order to upload pages on this document.
 2.  Upload a file through a [entity_link entity="208"]`Page`[/entity_link]. A document should get several pages
 3.  Edit the object Document and set the `Status` field to "VALIDATION_ASKED" (instead of "CREATED")
 4.  The demand is received by our team. The object is waiting for a "VALIDATED" status
+
+[alert type="danger"]Note that you are not allowed to store KYC documents on your side unless you have permission from the approriate authorities in your country[/alert]

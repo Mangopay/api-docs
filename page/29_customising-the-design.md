@@ -17,23 +17,16 @@ You will need to create your own skeleton (page markup) by positioning a zone to
 * The URL must **not to be protected** by a password (htaccess, etc.)
 * Your server must be compatible with Java v1.6
 * These rules apply to Sandbox and Production environments
-* Your domain and SSL certificate **must get a "A" level** [here](https://www.ssllabs.com/ssltest/)
+* Your domain and SSL certificate should get **an "A" level** [here](https://www.ssllabs.com/ssltest/)
 
 [alert type="info"]You must include the "Powered by MANGOPAY" banner on your payment page - you can download it [here](https://www.mangopay.com/terms/powered-by-mangopay.png)[/alert]
 
 ## Payline template implementation
 This skeleton can be called for all payments, but it can also be generated dynamically, according to the data which is relevant for each transaction. In this case, the URL could look like this:
 
-> https://url_squelette_dynamique?orderRef=XXXXX&orderAmount=YYYYY&orderCurrency=ZZZ&step=2
+> https://mysite.com?orderRef=XXXXX&orderAmount=YYYYY&orderCurrency=ZZZ&step=2
 
-The URL will be submitted by initiliasing the parameter **`TemplateURL`**».
-
-### Contextual Parameters
-The following parameters are submitted to the merchant while reaching out to the dynamic templates:
-
-> step: The process that is currently being undertaken may have one of the following values:
-* 1: entering payment information
-* 2: error
+The URL will be submitted by initiliasing the parameter **`TemplateURL`**.
 
 ### Payline Form
 The dynamic skeleton enables a merchant to create their own payment pages. The only condition is that the skeleton contains an HTML code which indicates where Payline should dynamically include its payment form via the API.

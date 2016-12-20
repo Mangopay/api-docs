@@ -1,4 +1,4 @@
-**The PreAuthorization Object** ensures the solvency of a registered card for 7 days. Beyond this period, it is still possible to charge the card (PayIns/Card/Direct) but funds are not guaranteed.
+**The PreAuthorization Object** ensures the solvency of a registered card for 7 days. 
 The overall process is as follows:
 1. Register a card (CardRegistration)
 2.  Create a PreAuthorization with the CardId. This allows you to charge an amount on a card

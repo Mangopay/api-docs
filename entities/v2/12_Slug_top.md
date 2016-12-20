@@ -1,1 +1,3 @@
 [alert type="info"]In the case of CAD `PayOut`, the author (`AuthorId`) of the `PayOut` should have their address (`Address` for Natural Users or `HeaquartersAddress` for Legal Users) completed in their `User` object.[/alert]
+
+[alert type="danger"]In the case of CAD `PayOut`, you must be using the API v2.01 (and therefore providing a detailed address), otherwise your PayOuts will be refused[/alert]

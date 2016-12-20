@@ -1,15 +1,12 @@
-# Collecting platforms fees
-**Summary**: MANGOPAY collects 1.8% + € 0.18 fees only per cash-in transaction in €. We never charge your client, but only you. You can decide to collect your fees during the PayIn, during a Transfert or during a PayOut.
+# Collecting platform fees
+**Summary**: MANGOPAY charges its "service fees" (for example 1.8% + 0.18€) per transaction in €, however we never charge your users, but only you. This means that in the API, you won't see any mention of these service fees. You will however see a field called `Fees` which is totally different - with this, you can decide to collect **your own fees** (perhaps your commission) during the PayIn, Transfer or even PayOut (or infact on any transaction, even Refunds).
 
-**Prerequisite**: Let’s say for this example that your platform gets 10% commission and that you decide to get this fees when you do a bankwire (from the wallet to the bank account).
+**Example use case:**
+Let’s say for this example that your platform takes 10% commission and that you decide to add this fee when the user does a PayOut Bankwire (from their wallet to a bank account). Then:
+1. The user A does a PayIn of 10€ (in the API, this would be requested as `DebitedFunds`=1000 and `Fees`=0)
+2. User A therefore receives 10€ in his wallet
+3. User A does a Transfer to User B’s wallet
+3. User B decides to do a PayOut to her bank account  (in the API, this would be requested as `DebitedFunds`=1000 and `Fees`=100)
+4. User B receives in her bank account 9€ (10€ – 10% of the fees that you took)
 
-**Use case:**
-1. The user A does a Payin of 100€.
-2. User A receives 100€ in his wallet.
-3. User A does a Transfert on user B’s wallet
-3. User B decides to do a Payout to its bank account.
-4. User B receives in his bank account 90€ (100€ – 10% of the fees that you get).
-
-It is at this moment that the 10€ of fees are taken and blocked for a month by Mangopay in a specific fees wallet for your platform. Please notice that you do not have access to this wallet, only Mangopay does.
-All collected fees during the month are given back to you at the end of the month – the mangopay fees.
-So with our example you will receive 8.02€ (10€ – 1,98€ mangopay fees).
+Your platform fees (the 1€ in this example) are automatically placed into a seperate wallet called the "Fees wallet" (note that you'll have one for each currency) and held there until you are next invoiced (when we'll send you the balance, minus our service fees). You can view the available funds in this wallet, however you are not able to create transactions directly involving it (ie you can not do a PayIn directly to this wallet nor PayOut the funds yourself). You can read more about accessing your client wallets [entity_link entity="271"]here[/entity_link].

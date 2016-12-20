@@ -1,1 +1,0 @@
-[alert type="info"]Note that you must do the [entity_link entity="279"]associated PayIn[/entity_link] before the `ExpirationDate` has passed (6.5 days after the `AuthorizationDate`) otherwise the preauthorization will irreversibly expire[/alert]

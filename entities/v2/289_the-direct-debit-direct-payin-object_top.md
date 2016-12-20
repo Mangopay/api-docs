@@ -6,8 +6,7 @@
 
 | Scheme | Payments with this mandat | Payment is created | User notified | Payment becomes "SUCCEEDED" |
 | -------- | -------- | -------- | -------- | -------- |
-| SEPA | 1st payment | D+0 | D+3 | D+8 |
-| SEPA | 2nd+ payment | D+0 | D+0 | D+5 |
+| SEPA | 1st+ payment | D+0 | D+0 | D+5 |
 | BACS | 1st payment | D+0 | D+1 | D+6 |
 | BACS | 2nd+ payment | D+0 | D+0 | D+5 |
 
