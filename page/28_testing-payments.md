@@ -1,21 +1,20 @@
 # How to run and test payments
 
 In the Sandbox environment, you can use the following test data to simulate a transaction.  Note that you can trigger specific error codes using specific amounts - see the [error codes page](/guide/errors) for more info.
-[alert type="info]For all cards, the expiry date can be any month/year in the future and the CSV (the three numbers on the back of the card) can be any three numbers[/alert]
+[alert type="info"]For all cards, the expiry date can be any month/year in the future and the CSV (the three numbers on the back of the card) can be any three numbers[/alert]
 
 
 ## Visa/MC
-**For payments under 100€ you can use these cards:**
+**For payments under 50€ you can use these cards:**
 * 4706750000000009
 * 4706750000000033
 * 4706750000000025
 * 4706750000000017
 
 **For payments with 3D Secure you can use these cards:**
-
-3D Secure starts from 100€. Therefore in the Sandbox environment, all payments over 100€ must be processed with one of the following cards:
-* 3569990000000132
-* 3569990000000157
+3D Secure starts from 50€. Therefore in the Sandbox environment, all payments over 50€ must be processed with one of the following cards - **please use the correct password shown below to avoid blocking the card**:
+* 3569990000000165
+* 3569990000000140
 
 [alert type="danger"]You can only use these cards with the password ″secret3″ (is different from the BCMC and Diners one!). If you put a wrong password the card will be blocked[/alert]
 
@@ -40,10 +39,6 @@ Choose "Masterpass" from the list and then:
 * Login : joe.test@email.com
 * Password : abc123
 * Pet name : fido
-
-## ELV
-* Account number: 0010739408
-* Bank code: 86055592
 
 ## Giropay
 *Step 1*
@@ -84,3 +79,8 @@ Note that the following specific amounts are reserved for specific errors:
 * Password : P@ylin3
 
 Then choose any one of the banks and validate the transaction.
+
+##Mandates
+For testing mandates, you should use a specific value for the FirstName for the user owning the mandate
+* "Invalid" will result in a failed mandate due to incorrect bank account information – note that this only works for mandates with the Scheme "BACS"
+* "Successful" will result in an active mandate, however you must do a payment with this mandate for the status to be updated

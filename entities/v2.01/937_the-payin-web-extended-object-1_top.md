@@ -1,0 +1,1 @@
+The **Pay-in web extended view** is a view to get more details about the card used to process a payin web.

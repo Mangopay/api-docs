@@ -1,0 +1,1 @@
+**SSO (Single Sign-On)** allows you to access to the Dashboard. You can create multiple SSOs so that several users can access to the Dashboard with personal credentials and specific [entity_link entity="909"]permissions[/entity_link].

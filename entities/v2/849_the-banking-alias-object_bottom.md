@@ -1,0 +1,1 @@
+These are the base parameters for a Banking Alias - for each type (see below) there are various other parameters specific to that type.

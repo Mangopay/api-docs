@@ -1,0 +1,1 @@
+[alert type="info"]Note that if you do not [entity_link entity="186"]cancel the preauthorization[/entity_link] yourself, nor do a payin with the preauth, we will automatically cancel it for you after the `ExpirationDate`[/alert]

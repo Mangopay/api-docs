@@ -1,0 +1,1 @@
+A  `UBO Declaration` is an electronic document replacing old `Shareholder Declaration`, in order to declare all the Ultimate Beneficial Owners of a BUSINESS-typed legal `User`.

@@ -1,0 +1,1 @@
+View a list of a banking aliases for a wallet

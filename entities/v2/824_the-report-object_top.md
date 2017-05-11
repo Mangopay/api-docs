@@ -1,8 +1,11 @@
 The `Report`object gives the possibility to download huge lists of transactions to CSV format for accounting or analysis purposes. This can be done either from the API or Dashboard.
 
 You can choose certain filters including:
-* A date range (`BeforeDate` and `AfterDate`) - note that the range can’t be more than 2 months, and must be < 13 months ago
+* A date range (`BeforeDate` and `AfterDate`) - note that the range can’t be more than 6 months, and must be < 13 months ago
 * Min/Max `DebitedFunds`
+* Min/Max `Fees`
+* A `WalletId`
+* A `UserId`
 * A transaction `Type` (PAYIN, PAYOUT or TRANSFER)
 * A transaction `Status` (CREATED, SUCCEEDED or FAILED)
 * A transaction `Nature` (REGULAR, REFUND, REPUDIATION or SETTLEMENT)

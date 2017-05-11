@@ -1,0 +1,1 @@
+[alert type="info"]Note that the email supplied when creating a SSO must be unique - it cannot already be used for another SSO. After the SSO is created, the email will not be modifiable.[/alert]

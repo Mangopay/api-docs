@@ -153,6 +153,7 @@ The following errors may be received by our PSP when POSTing the card data to th
 | 121003 or 001001 | Insufficient wallet balance | -------- |
 | 121004 | Specific case: please contact our Support Team | -------- |
 | 121005 | Refused due to the Fraud Policy | -------- |
+| 121006 | The associated bank account is not active | -------- |
 | 002998 | Blocked due to the Bank Account Owner’s KYC limitations (maximum debited or credited amount reached) | The bank account needs to be KYC verified ([more info](/guide/kyc)) |
 | 002999 | Blocked due to a Debited User’s KYC limitations (maximum debited or credited amount reached) | One of the user’s who has contributed to the wallet being debited needs to be KYC verified ([more info](/guide/kyc)) |
 
@@ -167,4 +168,3 @@ The following errors may be received by our PSP when POSTing the card data to th
 | DOCUMENT_DO_NOT_MATCH_USER_DATA | A custom description will potentially appears into the RefusedReasonMessage field | The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
 | DOCUMENT_DO_NOT_MATCH_ACCOUNT_DATA | A custom description will potentially appears into the RefusedReasonMessage field | The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
 | SPECIFIC_CASE | A custom description will potentially appears into the RefusedReasonMessage field | The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
-| OTHER | A custom description will potentially appears into the RefusedReasonMessage field | The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |

@@ -1,0 +1,1 @@
+[alert type="info"]Note that you need to confirm the mandate within one hour of the `CreationDate`, otherwise it will expire with the `ResultCode` "001807"[/alert]

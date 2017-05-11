@@ -2,7 +2,7 @@
 **I am developing a Marketplace. How to implement MANGOPAY?**
 
 ## Workflow
-MANGOPAY highly recommends to use the following workflow for any marketplaces business. If you have specific needs which are not mentioned here please [take a tour to our desk or contact the support team](https://mangopay.desk.com/).
+MANGOPAY highly recommends to use the following workflow for any marketplaces business. If you have specific needs which are not mentioned here please [contact the sales team](https://mangopay.desk.com/).
 
 ![alt](/uploads/medias/marketplace-workflow.png)
 

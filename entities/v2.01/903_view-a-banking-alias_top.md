@@ -1,0 +1,1 @@
+View the details of a banking alias

@@ -13,3 +13,5 @@ How does PreAuthorization work?
 
 [alert type="info"]In Italy, Greece and Spain, the pre-authorization has a particular running. In fact, the pre-authorized amount is debited from the bank account. Pre-authorized funds are stored by the bank. The user will get his/her funds back within 7 days.
 **This case appears on several Banks (we don’t have exhaustive list) in Spain, Italy and Greece. Mangopay recommends you to inform your users or only create €1.00 pre-authorizations in these countries.**[/alert]
+
+**Note that a preauthorization is [entity_link entity="186"]automatically cancelled[/entity_link] after the `ExpirationDate` if you do not cancel it yourself, nor do a payin with it**
