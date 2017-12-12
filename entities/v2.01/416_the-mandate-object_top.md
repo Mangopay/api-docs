@@ -1,7 +1,7 @@
 A direct debit mandate is an instruction between a user and a bank account which allows you to process payments directly from his bank to a wallet for a dedicated user.
 * After using this method, you can then use it to do a direct debit payin (in a similar way to registering a card and then doing a direct card payin for that card.
 * Mandates and direct debit payins are only available for certain business types, and is not activated by default – please contact your sales manager for more info
-* Mandates cover only payments in Europe, and this is split between two schemes (see Scheme in the mandate object) – BACS (for the UK) and SEPA (the rest of the EU). MANGOPAY handles the complexities and strict compliance regulations in each case, but you should be aware of a couple of particularities:
+* Mandates cover only payments in Europe, and this is split between two schemes (see Scheme in the mandate object) – BACS (for the UK) and SEPA (for the Eurozone). MANGOPAY handles the complexities and strict compliance regulations in each case, but you should be aware of a couple of particularities:
 -  Only GBP payments can be made with mandates in the BACS Scheme
 - The confirmation page and emails for mandates in the BACS Scheme are only available in English
 * Only bank account types GB and IBAN can be used to create a Mandate
