@@ -1,0 +1,1 @@
+This list includes PreAuthorized PayIns related to the PreAuthorization. Indeed, if a PreAuthorized PayIn fails, you can re-use the same Preauthorization to create a new PayIn while the PreAuthorization has not expired. As soon as a PreAuthorized Payin has succeeded, you cannot use the PreAuthorization anymore - even if the amount was partial.

@@ -20,3 +20,5 @@
 3. "Fickle" will result in a successfull payment, which is disputed by the user and hence a dispute is created
 * [entity_link entity="230"]Mandate[/entity_link] and direct debit payins are only available for certain business types, and is not activated by default – please contact your sales manager for more info
 * For BACS payments, you should know that the banks Natwest, RBS, HSBC, Metro and Nationwide will not show your client name with payments, and only "MANGOPAY" will be shown
+
+[alert type="danger"]You should be very careful when refunding these direct debit payments because chargebacks (disputes) are **non-contestable**, therefore if the end-user also requests a chargeback to their bank for a payment you have already refunded, you will have to cover the disputed funds yourself (since the funds of the original payment have already been refunded).[/alert]

@@ -13,7 +13,7 @@ In the Sandbox environment, you can use the following test data to simulate a tr
 
 **For payments with 3D Secure you can use these cards:**
 3D Secure starts from 50€. Therefore in the Sandbox environment, all payments over 50€ must be processed with one of the following cards - **please use the correct password shown below to avoid blocking the card**:
-* 3569990000000165
+* 3569990000000173
 * 3569990000000140
 
 [alert type="danger"]You can only use these cards with the password ″secret3″ (is different from the BCMC and Diners one!). If you put a wrong password the card will be blocked[/alert]
@@ -23,6 +23,8 @@ In the Sandbox environment, you can use the following test data to simulate a tr
 * 4970101122334422
 * 4970101122334406
 * 4970101122334414
+
+You can find more info about the liability shift on [this page](https://mangopay.desk.com/customer/en/portal/articles/2572098-all-you-need-to-know-about-3d-secure-integration-workflow-etc-?b_id=10427)
 
 ## Maestro
 All Maestro payments require 3DS
@@ -43,7 +45,6 @@ Choose "Masterpass" from the list and then:
 ## Giropay
 *Step 1*
 * BIC : TESTDETT421
-* IBAN : DE46940594210000012345
 
 *Step 2*
 * Id: sepatest1
@@ -79,6 +80,12 @@ Note that the following specific amounts are reserved for specific errors:
 * Password : P@ylin3
 
 Then choose any one of the banks and validate the transaction.
+
+## SEPA Bankwire
+
+* IBAN: FR7611808009101234567890147 
+* BIC: CMBRFR2B
+
 
 ##Mandates
 For testing mandates, you should use a specific value for the FirstName for the user owning the mandate

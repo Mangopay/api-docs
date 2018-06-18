@@ -1,6 +1,6 @@
 # Customize web templates
 
-PayIns via Web interface allow you to provide a property called `TemplateURLOptions` to customize your payment pages for credit cards, Sofort and ELV. Giropay does not allow to iFramed its payment page. So you cannot use this Template method with Giropay.
+PayIns via Web interface allow you to provide a property called `TemplateURLOptions` to customize your payment pages for credit cards and Sofort. Giropay does not allow to iFramed its payment page. So you cannot use this Template method with Giropay.
 
 ## Rules
 You will need to create your own skeleton (page markup) by positioning a zone to be completed by the PSP form via the API when creating a payment page. If your template isn’t displayed, it could be for these reasons:

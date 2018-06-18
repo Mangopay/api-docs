@@ -6,10 +6,11 @@ A `Direct Debit Mandate` is an instruction between a user and a bank account whi
 2. The confirmation page and emails for mandates in the BACS Scheme are only available in English
 3. Only bank account types GB and IBAN can be used to create a Mandate
 * When a mandate in the BACS Scheme is confirmed by the user, we will send them an email on your behalf (the design of this email, and the confirmation webpage they see, can be lightly customised with your logo and colours – see [entity_link entity="200"]the client object[/entity_link] for more info on that)
-* Once confirmed, mandates have the Status "SUBMITTED which means it has been submitted to the user’s bank and will become "ACTIVE" after a few days. However, you can immediately make payments against the mandate (ie you do not need to wait for the Status to become "ACTIVE") and we will manage the submission process for you – read more about the timings on the [entity_link entity="289"]payments page[/entity_link]
+* Once confirmed, mandates have the Status "SUBMITTED which means it has been submitted to the user’s bank and will become "ACTIVE" after a few days. For SEPA, you can immediately make a Direct Debit Payin against the mandate. This first payment will  change the status from SUBMITTED to ACTIVE– read more about the timings on the [entity_link entity="289"]payments page[/entity_link]
 * For testing mandates, you should use a specific value for the FirstName for the user owning the mandate
 1. "Invalid" will result in a failed mandate due to incorrect bank account information – note that this only works for mandates with the `Scheme` "BACS"
 2. "Successful" will result in an active mandate, however you must do a payment with this mandate for the status to be updated
 * Note that for all the mandate list methods, the usual [pagination](/guide/lists-pagination-management) and filter parameters are available, such as `BeforeDate`, `AfterDate` and `Status` and you can order by `CreationDate`
+* **For UK clients**: note that mandates can't be created on accounts where multiple signatures are required (business accounts). 
 
 [alert type="info"]Note that the language for the mandate confirmation pages and mandate PDFs is only English and French for now[/alert]

@@ -32,6 +32,7 @@ With the Visa/Mastercard credit cards, you can trigger specific error codes by u
 | 005404 | The refunded fees cannot exceed initial fee amount | |
 | 005405 | Balance of client fee wallet insufficient | |
 | 005407 | Duplicated operation: you cannot refund the same amount more than once for a transaction during the same day | |
+| 001403 | The transaction cannot be refunded (max 11 months) | |
 
 ## Card input errors
 |ResultCode|ResultMessage| More information | Test amount |
@@ -50,12 +51,16 @@ With the Visa/Mastercard credit cards, you can trigger specific error codes by u
 | 101104 | Transaction refused by the bank (card limit reached) |  | 333.60 |
 | 101105 | The card has expired |  |  |
 | 101106 | The card is inactive | The card is not active accourding to the bank and can therefore not be used |  |
+| 101108 | Transaction refused: the Debited Wallet and the Credited Wallet must be different |  |  |
+| 101109 | The payment period has expired |  Bankwires payin expire after one month if the funds has not been received by MANGOPAY within this time |  |
+| 101110 | The payment has been refused |  The payment has been refused by MANGOPAY |  |
 | 101410 | The card is not active | The card has not been disabled on Mangopay and is no longer useable |  |
 | 101111 | Maximum number of attempts reached | Too much attempts for the same transaction | 333.38 |
 | 101112 | Maximum amount exceeded | This is a card limitation on spent amount |  |
 | 101113 | Maximum Uses Exceeded | Maximum attempts with this cards reached. You must try again after 24 hours |  |
 | 101115 | Debit limit exceeded | This is a card limitation on spent amount | 333.61 |
 | 101116 | Amount limit | The contribution transaction has failed |  |
+| 101118 | An initial transaction with the same card is still pending | | |
 | 101199 |Transaction refused | The transaction has been refused by the bank. Contact your bank in order to have more information about it |  |
 
 ## Secure mode / 3DSecure errors
@@ -121,13 +126,25 @@ The following errors may be received by our PSP when POSTing the card data to th
 | -------- | -------- | -------- | -------- |
 | 008999 | Fraud policy error |  |  |
 | 008001 | Counterfeit Card |  |  |
-| 008002 | Lost Card | A "lost card" error is a rule carried by the bank which deactivate a card due to too many payments (or attempts). In Sandbox, just choose another card, this one will be reactivated soon (the day after). In Prodcution, the card is blocked for the day or concidered as fraudulent by the bank | 333.41 |
+| 008002 | Lost Card | A "lost card" error is a rule carried by the bank which deactivate a card due to too many payments (or attempts). In Sandbox, just choose another card, this one will be reactivated soon (the day after). In Production, the card is blocked for the day or concidered as fraudulent by the bank | 333.41 |
 | 008003 | Stolen Card | Similar to 008002 | 333.43 |
 | 008004 | Card bin not authorized |  |  |
 | 008005 | Security violation |  | 333.63 |
 | 008006 | Fraud suspected by the bank |  | 333.34 |
 | 008007 | Opposition on bank account (Temporary) |  |  |
 | 008500 | Transaction blocked by Fraud Policy |  |  |
+| 008504 | Amount of the transaction exceeded the amount permitted |  |  |
+| 008505 | Number of accepted transactions exceeded the velocity limit set |  |  |
+| 008506 | Unauthorized IP address country |  |  |
+| 008507 | Cumulative value of transactions exceeded |  |  |
+| 008508| Unauthorized Card issuer country |  |  |
+| 008509 | Number of bank cards allowed is exceeded |  |  |
+| 008510 | Number of clients per card is exceeded |  |  |
+| 008511 | The 3DS authentification has failed due to supplementary security checks |  Anti-fraud rules have triggered a supplementary 3DS authentication and this authentication has failed |  |
+| 008512 | IP location different than card issuer country |  |  |
+| 008513 | Number of device fingerprints allowed is exceeded |  |  |
+| 008515 |  Authentication not available: do not benefit from liability shift |  |  |
+| 008514 | Unauthorized Card BIN |  |  |
 | 008600 | Wallet blocked by Fraud policy |  |  |
 | 008700 | User blocked by Fraud policy |  |  |
 
@@ -158,13 +175,14 @@ The following errors may be received by our PSP when POSTing the card data to th
 | 002999 | Blocked due to a Debited User’s KYC limitations (maximum debited or credited amount reached) | One of the user’s who has contributed to the wallet being debited needs to be KYC verified ([more info](/guide/kyc)) |
 
 ## KYC document errors
-|RefusedReasonCode|RefusedReasonMessage | More information |
-| -------- | -------- | -------- |
-| DOCUMENT_UNREADABLE | A custom description will potentially appears into the RefusedReasonMessage field | This means Mangopay can’t read the document. The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
-| DOCUMENT_NOT_ACCEPTED | A custom description will potentially appears into the RefusedReasonMessage field | This means the document is unvalidate. The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
-| DOCUMENT_HAS_EXPIRED | A custom description will potentially appears into the RefusedReasonMessage field | This means the document has expired. The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
-| DOCUMENT_INCOMPLETE | A custom description will potentially appears into the RefusedReasonMessage field | This means Mangopay the document is incomplete. The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
-| DOCUMENT_MISSING | A custom description will potentially appears into the RefusedReasonMessage field | This means Mangopay there is no doument sent. The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
-| DOCUMENT_DO_NOT_MATCH_USER_DATA | A custom description will potentially appears into the RefusedReasonMessage field | The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
-| DOCUMENT_DO_NOT_MATCH_ACCOUNT_DATA | A custom description will potentially appears into the RefusedReasonMessage field | The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
-| SPECIFIC_CASE | A custom description will potentially appears into the RefusedReasonMessage field | The error code will appears on RefusedReasonType, the custom description on RefusedReasonMessage |
+|RefusedReasonType | IDENTITY_PROOF | REGISTRATION_PROOF  | ARTICLES_OF_ASSOCIATION | SHAREHOLDER_DECLARATION
+| -------- | -------- | -------- | -------- | -------- |
+| DOCUMENT_UNREADABLE | <ul><li>Document is fuzzy, unreadable</li><li>MRZ band is cut, must be perfectly readable (no flash)</li></ul> | A clear copy of your Up-to-date Extract from the Companies Register is required. The one provided is not clear enough | A clear copy of Up-to-date Articles of Association is required. The one provided is not clear enough | A clear copy of Up-to-date shareholder declaration is required. The one provided is not clear enough |
+| DOCUMENT_NOT_ACCEPTED | <ul><li>Document is not acceptable</li><li>Document is not a national identity card, passport required out of the EEA</li><li>Document is not an ID proof accepted by our terms and conditions guideline</li></ul> | Document is not acceptable, it doesn't fit the KYC requirements guideline agreed with us | Document is not acceptable, it doesn't fit the KYC requirements guideline agreed with us | Document is not acceptable, it doesn't fit the KYC requirements guideline agreed with us |
+| DOCUMENT_HAS_EXPIRED | <ul><li>ID proof is expired</li></ul>Only for FR, extended validity period from 10 to 15 years is not applicable if:<ul><li>individual was underage when document was issued</li><li>the document was issued before the 02/01/2004</li></ul> | <ul><li>Document is outdated (more than 3 months) </li><li> A recent copy of Up-to-date Extract from the Companies Register is required (maximum 3 months old)</li></ul> | <ul><li> Document is outdated </li><li> A copy of Up-to-date Articles of Association (which include the last modifications made) is required</li></ul> | N/A |
+| DOCUMENT_INCOMPLETE | <ul><li>Document incomplete </li><li> Front or backside of the document is missing </li></ul> | <ul><li> A recent copy of Up-to-date Extract from the Companies Register is required </li><li> All the pages of the document need to be provided</li></ul> | The full copy of the Up-to-date Articles of Association is required (all the pages signed of the document need to be provided) | <ul><li>Date, name or signature is missing </li><li> Document was left blanked </li><li> Only legal entity legal person chart is completed and not the individual one </li><li> Important to know who INDIRECTLY own the company if a holding company has the first level ownership</li></ul> |
+| DOCUMENT_DO_NOT_MATCH_USER_DATA | <ul><li>Declarative data and document data do not match </li><li> NATURAL USER: declarative data FirstName and LastName do not match with document data </li><li> LEGAL_PERSONALITY: declarative data LegalRepresentative FirstName and LegalRepresentative LastName do not match with document data </li><li> Declarative data should be edited and the document resubmitted: First name and Last name are compulsory, middle name is optional</li></ul> | N/A | N/A | N/A |
+| DOCUMENT_DO_NOT_MATCH_ACCOUNT_DATA | Bank account title do not match wallet owner data | N/A | N/A | N/A |
+| DOCUMENT_FALSIFIED| Document is falsified:<ul><li>Account will be blocked</li><li>Partner will be contacted, meanwhile fraud team will check all related transactions</li></ul> | N/A | N/A | N/A |
+| UNDERAGE PERSON |Individual is underage and can not process transactions through MGP 18+ only | N/A | N/A | N/A |
+| SPECIFIC_CASE | Specific case, please refer to RefusedReasonMessage for further informations | N/A | N/A | N/A |

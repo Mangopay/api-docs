@@ -1,6 +1,6 @@
 # KYC and compliance
 
-[KYC means "Know Your Customer"](https://en.wikipedia.org/wiki/Know_your_customer) and are a set of legal obligations related to our license as an electronic money issuer and are neccessary in order to fight fraud, money laundering and financing of terrorism. There are 3 levels of validation (light, regular and strong) and the whole process of uploading documents and viewing a user's KYC level is all **managed through the API**. A higher KYC level allows a user to handle higher volumes of cash flows:
+[KYC means "Know Your Customer"](https://en.wikipedia.org/wiki/Know_your_customer) and are a set of legal obligations related to our license as an electronic money issuer and are necessary in order to fight fraud, money laundering and financing of terrorism. There are 3 levels of validation (light, regular and strong) and the whole process of uploading documents and viewing a user's KYC level is all **managed through the API**. A higher KYC level allows a user to handle higher volumes of cash flows:
 
 * **Light validation**: Transactions worth less than €2,500 for **cash-in** and/or €1,000 for **cash-out** cumulated **per legal year and per user** (transfers are also counted in this equation)
 * **Regular validation**: Transactions worth more than €2,500 for **cash-in** and/or €1,000 for **cash-out** cumulated **per legal year and per user**
@@ -12,12 +12,13 @@ To change the KYC level, you must provide certain information about the user, as
 
 |Document type|Usage|
 | -------- | -------- |
-|"IDENTITY_PROOF"|ID Card or Passport <sup>(1)</sup> or driving licence for UK, USA and Canada (a passport is required outside of SEPA area)<br>In the case of a legal user, this document should refer to the individual duly empowered to act on behalf of the legal entity|
+|"IDENTITY_PROOF"|ID Card, Passport <sup>(1)</sup> or driving licence for SEPA area. Passeport or driving licence for the UK, USA and Canada. For other nationalities a passport is required.<br>In the case of a legal user, this document should refer to the individual duly empowered to act on behalf of the legal entity|
 |"ARTICLES_OF_ASSOCIATION"|Certified articles of association (Statute) - formal memorandum stated by the entrepreneurs, in which the following information is mentioned: business name, activity, registered address, shareholding…|
 |"REGISTRATION_PROOF"|Extract from the Company Register issued within the last three months<sup>(4)</sup><br>In the case of an organization or soletrader, this can be a proof of registration from the official authority|
 |"SHAREHOLDER_DECLARATION"|Send information referring to the [shareholder declaration](https://www.mangopay.com/terms/shareholder-declaration/Shareholder_Declaration-EN.pdf)|
 |"ADDRESS_PROOF"|A proof of address<sup>3</sup>|
 
+These documents can be refused for various reasons - see details at the end of the [Errors page](/guide/errors).
 
 ## Light Authentification
 [alert type="info"]Allows for up to 2500€ for cash-in and up to 1000€ for cash-out (per user, per year)[/alert]

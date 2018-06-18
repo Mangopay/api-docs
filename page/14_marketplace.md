@@ -4,13 +4,13 @@
 ## Workflow
 MANGOPAY highly recommends to use the following workflow for any marketplaces business. If you have specific needs which are not mentioned here please [contact the sales team](https://mangopay.desk.com/).
 
-![alt](/uploads/medias/marketplace-workflow.png)
+![alt](https://docs.mangopay.com/uploads/medias/marketplace-workflow-4.png)
 
 According to this diagram
 * Once a seller account is created on your application side, your server says to MANGOPAY to create a User and to automatically associate a wallet. The Seller and its seller’s wallet are created.
 * Once a buyer account is created on your application side, your server says to MANGOPAY to create a User and to automatically associate a wallet. The Buyer and its wallet are created
 * The User buyer pays into its own wallet. Funds are escrowed there
-* Once the buyer receives his item (depends on your app rules) the seller is payed. This means your server says to MANGOPAY to transfer the funds from the buyer’s wallet to the seller ’s wallet.
+* Once the buyer receives his item (depends on your app rules) the seller is paid. This means your server says to MANGOPAY to transfer the funds from the buyer’s wallet to the seller ’s wallet.
 * Your application takes its fees on this operation.
 * Now the seller can cash-out the collected funds to her/his bank account.
 

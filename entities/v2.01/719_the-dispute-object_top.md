@@ -3,7 +3,7 @@
 # Dispute process overview:
 
 1. A [`PayIn`](/guide/payment-methods-overview) is completed successfully
-2. The end user contacts their bank to request a chargeback
+2. The end user contacts its bank to request a chargeback
 3. The bank contacts us and withdraws the funds automatically
 4. We create a [entity_link entity="176"]`Dispute`[/entity_link] object in the API – you will receive an email by default, and can also set up the usual [entity_link entity="246"]Hooks[/entity_link] if you like
 5. Along with the Dispute, we will also [entity_link entity="221"]repudiate[/entity_link] the funds from your credit wallet (the amount in the original wallet will therefore remain unchanged which is different to the previous process)

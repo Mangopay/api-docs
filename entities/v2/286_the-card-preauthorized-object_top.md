@@ -7,9 +7,9 @@ The overall process is as follows:
 
 How PreAuthorization + validation (Pay-In) works?
 
-* Once the `PreAuthorization` object gets `Status` = "SUCCEEDED" and `PaymentStatus` = "WAITING" you can charge the card.
-* The Pay-In amount has to be less than or equal to the amount authorized.
-* The Preauthorization can be used only once, even if the payin amount is less than the preauthorized amount.
+* Once the `PreAuthorization` object gets `Status` = "SUCCEEDED" and `PaymentStatus` = "WAITING" you can charge the card through a PreAuthorized PayIn.
+* The PayIn amount has to be less than or equal to the amount authorized.
+* If a PreAuthorized PayIn fails, you can re-use the same Preauthorization to create a new PayIn while the PreAuthorization has not expired.
 
 **Remember that you must include the "Powered by MANGOPAY" banner on your payment page - you can download it [here](https://www.mangopay.com/terms/powered-by-mangopay.png)**
 

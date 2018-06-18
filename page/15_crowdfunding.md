@@ -96,7 +96,7 @@ You will need the CardRegistration and the Direct Payin APIs.
 
 **1. The Buyer a €50 item and clicks on “Pay now”**
 
-* The application creates a CardRegistration object/li>
+* The application creates a CardRegistration object
 * You’ll receive a JSON object with 3 interesting data at the stage:
 1. the accesskey
 2. the PreRegistrationData
