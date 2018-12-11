@@ -1,4 +1,4 @@
-# MANGOPAY Dashboard V2
+# MANGOPAY Dashboard 
 
 The MANGOPAY Dashboard is a visual interface which provides full access to all your activity and operations (get lists, do refunds, do payouts, etc.)! The info below presumes that you have basic knowledge of the Mangopay solution. The access to the MANGOPAY Dashboard is monitored by the  [SSO object](https://docs.mangopay.com/endpoints/v2.01/sso#e872_the-sso-object), you can create multiple access for multiple users with different permissions. This operation can be done throught the API or on the Account page of the dashboard.  
 
@@ -17,7 +17,8 @@ You will then receive an email with a dedicated access
 * Create a password (with one uppercase letter, one lowercase letter, a number and a symbol)
 
 **STEP 3. Sign in**
-* To the [beta V2 production dashboard](https://api.mangopay.com/authorize?response_type=code&client_id=mangoappsV2-beta&redirect_uri=https://dashboard-beta.mangopay.com/Authorize/SignIn)
+* To the [production dashboard](https://dashboard.mangopay.com)
+* To the [V1 dashboard (old dashboard)](https://dashboard-v1.mangopay.com/)
 * To the [sandbox production account](http://dashboard.sandbox.mangopay.com)
 * If you’ve lost or forgotten your password. You can use the “forgotten password” button.
 

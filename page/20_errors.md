@@ -54,7 +54,7 @@ With the Visa/Mastercard credit cards, you can trigger specific error codes by u
 | 101108 | Transaction refused: the Debited Wallet and the Credited Wallet must be different |  |  |
 | 101109 | The payment period has expired |  Bankwires payin expire after one month if the funds has not been received by MANGOPAY within this time |  |
 | 101110 | The payment has been refused |  The payment has been refused by MANGOPAY |  |
-| 101410 | The card is not active | The card has not been disabled on Mangopay and is no longer useable |  |
+| 101410 | The card is not active | The card has been disabled on Mangopay and is no longer useable |  |
 | 101111 | Maximum number of attempts reached | Too much attempts for the same transaction | 333.38 |
 | 101112 | Maximum amount exceeded | This is a card limitation on spent amount |  |
 | 101113 | Maximum Uses Exceeded | Maximum attempts with this cards reached. You must try again after 24 hours |  |

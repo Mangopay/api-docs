@@ -23,7 +23,7 @@
 **For the merchant: No risk of chargebacks**
 
 It highly reduces the number of disputed payment due to “unauthorized transacton”. As we explained on other documents, on e-commerce the transactions are Card Non Present (CNP). In other words, the card and the standard security measures are not physically present in the transaction. Therefore the risk for fraudulent transactions is much greater. Given this, the liability of the transactions rests on the merchant. In other words, the payer can open a dispute to contest the funds. 
-When doing a transaction with 3DS, the liability of the transaction is shifted back to the buyer’s bank. 
+When doing a transaction with 3DS, the liability of the transaction is shifted back to the buyer’s bank in the Euro zone. 
 
 
 # How it works for you

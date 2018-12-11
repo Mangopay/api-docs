@@ -5,6 +5,7 @@ A `Direct Debit Mandate` is an instruction between a user and a bank account whi
 1. Only GBP payments can be made with mandates in the BACS Scheme
 2. The confirmation page and emails for mandates in the BACS Scheme are only available in English
 3. Only bank account types GB and IBAN can be used to create a Mandate
+4. The minimum amount is £1/1€. 
 * When a mandate in the BACS Scheme is confirmed by the user, we will send them an email on your behalf (the design of this email, and the confirmation webpage they see, can be lightly customised with your logo and colours – see [entity_link entity="200"]the client object[/entity_link] for more info on that)
 * Once confirmed, mandates have the Status "SUBMITTED which means it has been submitted to the user’s bank and will become "ACTIVE" after a few days. For SEPA, you can immediately make a Direct Debit Payin against the mandate. This first payment will  change the status from SUBMITTED to ACTIVE– read more about the timings on the [entity_link entity="289"]payments page[/entity_link]
 * For testing mandates, you should use a specific value for the FirstName for the user owning the mandate
