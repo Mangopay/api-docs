@@ -15,14 +15,16 @@ There are two levels of user verification, also called API levels: Light (defaul
 
 **Know your limits**
 
+[alert type="info"]The AML5 regulation has downgraded the limit amount for identity verification (KYC limit).  [/alert]
+
 The limit of funds which a user can handle with a Light (default) verification depends on your country of incorporation and the MANGOPAY services which you are using: Payment Services or Electronic Money Services.
 
-|COUNTRY|                        PAYMENT SERVICES                      |                        ELECTRONIC MONEY ISSUER                      |
+|COUNTRY|                        PAYMENT SERVICES                      |                        ELECTRONIC MONEY SERVICES                      |
 | -------- | -------- | -------- |
- |FRANCE| <ul><li> Pay-in/Transfers: no limit </li><li> Payout: 0.01€ | <ul><li> Cumulated Payout per calendar month: 250€</li><li> Account balance: 250€ |
-|GERMANY| <ul><li> Pay-in/Transfers: no limit </li><li>  Payout: 0.01€| <ul><li> Cumulated Payout per calendar month: 100€ </li><li> Account balance: 100€  |
-|REST OF EUROPE|<ul><li>  Pay-in/Transfers: no limit </li><li>  Payout: 0.01€| <ul><li> Cumulated Payout per calendar month: 250€</li><li> Account balance: 250€ |
+ |FRANCE| <ul><li> Pay-in/Transfers: no limit </li><li> Payout: compulsory for any amount| <ul><li> Cumulated Payout per calendar month: 150€</li><li> User balance: 150€ |
+|GERMANY| <ul><li> Pay-in/Transfers: no limit </li><li>  Payout: compulsory for any amount| <ul><li> Cumulated Payout per calendar month: 100€ </li><li> User balance: 100€  |
+|REST OF EUROPE|<ul><li>  Pay-in/Transfers: no limit </li><li>  Payout: compulsory for any amount| <ul><li> Cumulated Payout per calendar month: 150€</li><li> User balance: 150€ |
 
 
 
-To find out which MANGOPAY service you are using, please refer to your [contract](https://mangopay.desk.com/customer/portal/articles/2957440).
+To find out which MANGOPAY service you are using, please refer to your [contract](https://support.mangopay.com/s/article/Where-can-I-find-out-what-MANGOPAY-services-I-am-using?language=en_US).

@@ -17,33 +17,37 @@ Here is the information which we require:
 
 
 ## Regular verification
-[alert type="info"]Allows for unlimited cash-in or cash-out (per user, per year)[/alert]
+
+[alert type="info"]Please note that we recently changed the required information to do the regular validation of a `Legal User` type business. We now ask you to declare the `CompanyNumber` and to post an `UBOs declaration` instead of the manual shareholder declaration.    [/alert]
+
+Allows for unlimited cash-in or cash-out (per user, per year)
 
 In addition to the information provided for “light” verification, the following is the information** you are required** to collect from your users to allow them to go over the default [limit](https://docs.mangopay.com/guide/kyc-1). Users will need to provide at least one document proving their identity.
 
 |Person type|LegalPersonType|Required infos|Required KYC documents|
 | -------- | -------- | -------- | -------- |
-|Natural|n/a|	n/a |ID Card or Passport <sup>(1)</sup> or driving licence for UK, USA and Canada (a passport is required outside of SEPA area) - "IDENTITY_PROOF"|
-|Legal|Business|Headquarters address - `HeadquartersAddress`<br>Legal representative email - `LegalRepresentativeEmail`<br>Legal representative address - `LegalRepresentativeAddress`|"IDENTITY_PROOF"<br>"ARTICLES_OF_ASSOCIATION"<br>"REGISTRATION_PROOF"<br>"SHAREHOLDER_DECLARATION"|	
-|Legal|Organization|*As above*|"IDENTITY_PROOF"<br>"ARTICLES_OF_ASSOCIATION"<br>"REGISTRATION_PROOF"|
-|Legal|Soletrader|*As above*|"IDENTITY_PROOF"<br>"REGISTRATION_PROOF"|
+|Natural|n/a|	n/a |ID Card or Passport <sup>(1)</sup> or driving licence for UK, USA and Canada (a passport is required outside of EU area) - "IDENTITY_PROOF"|
+|Legal|Business| `HeadquartersAddress`<br> `LegalRepresentativeEmail`<br> `LegalRepresentativeAddress`<br> [`CompanyNumber`](https://docs.mangopay.com/guide/company-number) <br> [`UBO declaration`](https://docs.mangopay.com/endpoints/v2.01/ubo-declarations#e1024_the-ubo-declaration-object) |"IDENTITY_PROOF"<br>"ARTICLES_OF_ASSOCIATION"<br>"REGISTRATION_PROOF"|	
+|Legal|Organization|`HeadquartersAddress`<br> `LegalRepresentativeEmail`<br> `LegalRepresentativeAddress`|"IDENTITY_PROOF"<br>"ARTICLES_OF_ASSOCIATION"<br>"REGISTRATION_PROOF"|
+|Legal|Soletrader|`HeadquartersAddress`<br> `LegalRepresentativeEmail`<br> `LegalRepresentativeAddress`|"IDENTITY_PROOF"<br>"REGISTRATION_PROOF"|
 
-*Note that you can change the `LegalPersonType` once it has been set (although if the user doesn't have the required KYC documents for the new value listed in the table above, their KYC level will be downgradedt)*
+*Note that you can change the `LegalPersonType` once it has been set (although if the user doesn't have the required KYC documents for the new value listed in the table above, their KYC level will be downgraded)*
 
-[alert type="info"]Note: In some exceptional cases, our Legal team will ask for extra documents if they suspect the user of illegal activities or political exposure.[/alert]
+[alert type="info"]Note: In some exceptional cases, our Legal team will ask for extra documents if they suspect the user of illegal activities or political exposure. Also when the UBO declared with this functionality can not be matched with an official paper (Article of association registration proof), we will be required to request extra documents (such as the shareholder delcaration) to validate the KYC of this user. This is part of our contractual relationship ( article 4.2).[/alert]
 
 
 ## KYC documents
 
-Here are the required documents for regular verification.
+KYC documents must be submitted in one of the following languages: [French](https://support.mangopay.com/s/article/French-users-what-documents-can-be-submitted?language=en_US), [English](https://support.mangopay.com/s/article/users-from-the-uk-what-documents-can-be-submitted?language=en_US), [German](https://support.mangopay.com/s/article/German-user-which-documents-should-be-submitted), [Dutch](https://support.mangopay.com/s/article/dutch-user-what-documents-can-be-submitted?language=en_US), [Spanish](https://support.mangopay.com/s/article/Spanish-user-which-verification-documents-should-be-submitted), [Italian](https://support.mangopay.com/s/article/Italian-user-which-verification-documents-should-be-submitted), and [Portuguese](https://support.mangopay.com/s/article/portugese-users-what-documents-can-be-submitted?language=en_US).
+If a document is not available in one of the above languages, an official translation in French or English will be required. The Legal team may ask for the official translation of a document if deemed necessary.
+
 Please find below the details for each required document. 
 
 |Document type|Usage|
 | -------- | -------- |
-|"IDENTITY_PROOF"| ID Card, Passport or driving license for SEPA area. Passport or driving licence for the UK, USA and Canada. For other nationalities a passport is required.<br>In the case of a legal user, this document should refer to the individual duly empowered to act on behalf of the legal entity.  ID card: Front AND Back (Valid) OR Passport (Valid)|
+|"IDENTITY_PROOF"| ID Card, Passport, Residence Permit, or Driving License for EU area. Passport or Driving Licence for the UK, USA and Canada. For other nationalities, a passport is required.<br>In the case of a legal user, this document should refer to the individual duly empowered to act on behalf of the legal entity.  ID card: Front AND Back (Valid) OR Passport (Valid)|
 |"ARTICLES_OF_ASSOCIATION"|Certified articles of association (Statute) - formal memorandum stated by the entrepreneurs, in which the following information is mentioned: business name, activity, registered address, shareholding…|
 |"REGISTRATION_PROOF"|Extract from the Company Register issued within the last three months<br>In the case of an organization or soletrader, this can be a proof of registration from the official authority|
-|"SHAREHOLDER_DECLARATION"|Send information referring to the [shareholder declaration](https://www.mangopay.com/terms/shareholder-declaration/Shareholder_Declaration-EN.pdf)|
 |"ADDRESS_PROOF"|Proof of address. Confirmation of residence: Less than a year old. Can be: Residential Registration Form, Water/electricity/gas/telephone bill, Tax certificate, Householder insurance, Confirmation of real estate ownership|
 
 These documents can be refused for various reasons - see details at the end of the [Errors page](/guide/errors).

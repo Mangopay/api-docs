@@ -1,13 +1,14 @@
 Once setup, hook notifications allow us to make a request to a specific URL on your server to make you aware of various Events (such as a failed PayOut). You can set up one URL for each `EventType`. Here are the rules:
-* After 100 failed notifications for an `EventType` (we couldn’t reach your URL), the hook will be automatically set to `Validity`="INVALID" and `Status`= "DISABLED".
+* After 100 failed notifications for an `EventType` (we couldn’t reach your URL), the hook will be automatically set  `Validity` to "INVALID" and `Status` to  "DISABLED".
 * Every 10 failed notifications you will receive an email warning you of the issue.
 * Each time you have a successful notification, we reset this counter (so if you have 99 failures, then 1 successful and then 1 failure, this won’t result in the 100 failed email alert)
 * Changing the URL for a hook will not reset your failure count though
 * The URL that we hook **must respond with a 200 status code within 2 seconds** – otherwise we will consider the hook a failure
 * You are **strongly advised** to do a GET on the resource to check its Status (to ensure the Event is still relevant, but also to ensure the hook is authentic)
 * You can also view and manage your Hook notifications from the new MANGOPAY Dashboard. You have the possibility to test the hook to see if it is working well. Note that when setting up a new hook, then when saving it a test is launch automatically
-* We are currently **unable to send hooks to servers that accept only TLS 1.2** (in sandbox this is possible, but not in production) - we will improve this in the future, but we do not yet have a date confirmed
-* You must use a trusted SSL certificate - **self-signed certificates are not supported**
+* You must use a trusted SSL certificate - **self-signed certificates are not supported**.
+
+[alert type="info"]Note that we have released a new functionality **Retry on hooks**. For any failed hook (no response 200), we  now resend the notification every ten minutes during the first hour and every eight hours for three days. With this feature, you receive either one notification, or more for the same event. Therefore, we advise you to make your event processing idempotent to avoid duplicated event receipts.[/alert]
 
 The following EventType are available : 
 * PAYIN_NORMAL_CREATED, PAYIN_NORMAL_SUCCEEDED, PAYIN_NORMAL_FAILED
@@ -21,9 +22,9 @@ The following EventType are available :
 * DISPUTE_DOCUMENT_CREATED, DISPUTE_DOCUMENT_VALIDATION_ASKED, DISPUTE_DOCUMENT_SUCCEEDED, DISPUTE_DOCUMENT_FAILED
 * DISPUTE_CREATED, DISPUTE_SUBMITTED, DISPUTE_ACTION_REQUIRED, DISPUTE_FURTHER_ACTION_REQUIRED, DISPUTE_CLOSED, DISPUTE_SENT_TO_BANK
 * TRANSFER_SETTLEMENT_CREATED, TRANSFER_SETTLEMENT_SUCCEEDED, TRANSFER_SETTLEMENT_FAILED
-* MANDATE_CREATED, MANDATE_FAILED, MANDATE_ACTIVATED, MANDATE_SUBMITTED
+* MANDATE_CREATED, MANDATE_FAILED, MANDATE_ACTIVATED, MANDATE_SUBMITTED, MANDATE_EXPIRED
 * PREAUTHORIZATION_PAYMENT_WAITING, PREAUTHORIZATION_PAYMENT_EXPIRED, PREAUTHORIZATION_PAYMENT_CANCELED, PREAUTHORIZATION_PAYMENT_VALIDATED
-* UBO_DECLARATION_CREATED, UBO_DECLARATION_VALIDATION_ASKED, UBO_DECLARATION_REFUSED, UBO_DECLARATION_VALIDATED
+* UBO_DECLARATION_CREATED, UBO_DECLARATION_VALIDATION_ASKED, UBO_DECLARATION_REFUSED, UBO_DECLARATION_VALIDATED, UBO_DECLARATION_INCOMPLETE
 
 **Notification format:** ...your-site.com?EventType=`EventType`&RessourceId=`RessourceId`&Date=`Timestamp` 
 
@@ -34,4 +35,4 @@ Where the `RessourceId` is the `Id` of the object in question.
 **Example:**
 If you want to create a notification for the event type "KYC_SUCCEEDED" on your URL: "http://www.mynotificationurl.com" you will recieve this ping: http://www.mynotificationurl.com?EventType=KYC_SUCCEEDED&RessourceId=1309853&Date=1397037093
 
-A useful cloud tool for testing notifications in sandbox is [requestb.in](http://requestb.in/).
+A useful cloud tool for testing notifications in sandbox is [requestbin.com](http://requestbin.com/).

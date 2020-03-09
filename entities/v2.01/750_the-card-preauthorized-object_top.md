@@ -13,6 +13,7 @@ How PreAuthorization + validation (Pay-In) works?
 
 **Remember that you must include the "Powered by MANGOPAY" banner on your payment page - you can download it [here](https://www.mangopay.com/terms/powered-by-mangopay.png)**
 
+Note that for Maestro card, you must capture the full amount of the PreAuthorization. You can't capture less. 
 
 [alert type="info"]In Italy, Greece and Spain, the PreAuthorization process is a little particular whereby the pre-authorized amount is actually debited from the bank account (the pre-authorized funds are stored by the bank). The user will get his/her funds back within 7 days.
 

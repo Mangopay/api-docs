@@ -7,7 +7,7 @@ Address Verification System is an anti-fraud tool used in the UK, US and Canada 
 
 The system compares the billing address entered by the user for the purchase and the address of the credit card registered at his bank.  Depending on multiple checks between these two addresses, a "score" is provided by the acquiring bank. We are now providing you this AVS result as an indicator. In other words, we won’t act over a bad scoring.  You are therefore responsible for implementing rules on the scoring. 
 
-Result system:
+**Result system:**
 
 |MANGOPAY value|Comments|
 | -------- | -------- |
@@ -22,34 +22,36 @@ Result system:
 -----
 
 
-***How to implement it with Mangopay?***
+**How to implement it with Mangopay?**
 
 1. Send billing Information
  
- In order to offer this solution to you,  we have added the optional property `BillingAddress` on the API endpoints Create a Card Direct Payin and Create a PreAuthorization. This new property is composed of the same fields as all our `Address` structure in our API. If you want us to return the AVS scoring you must send us the `BillingAddress` completed with required field.
+ In order to offer this solution to you,  we have added the optional property `BillingAddress` on the API endpoints Create a Card Direct Payin and Create a PreAuthorization. This new property is composed of the same fields as all our `Address` structure in our API. 
 
 2. Get the AVS result:
- 
+
 If you have sent the billing information, you will get the `AVSResult` in the response to calls on the following endpoints:
 * [Create a Card Direct Payin ](https://docs.mangopay.com/endpoints/v2.01/payins#e278_create-a-card-direct-payin)
 * [Create a PreAuthorization](https://docs.mangopay.com/endpoints/v2.01/preauthorizations#e184_create-a-preauthorization)
 
+If you have not sent the billing information, you will get a `AVSResult` equal to "No Check" in the response. No action needed.
+
 The `AVSResult` information will appear inside the property `SecurityInfo`.  `SecurityInfo` is a new property that we will use more and more to transmit key anti-fraud information.
 
-
-
+ [alert="info"] All Card direct Payin and PreAuthorization will trigger AVS. [/alert]
+ [alert="info"] If you want to test the AVS feature in sandbox, please send us an email at 'support@mangopay.com' with your sandbox clientId. [/alert]
 -----
 
 
-***Tips:***
+**Tips:**
 
 As we said before, AVS score only gives a score on a transaction, but doesn’t block the payment. In order to make the most of this feature, we advise you to adapt your flow adding conditions dependant on the AVS result. The best way to do so is to start by a PreAuthorization, check the `AVSResult` and depending on the result capture the funds or review manually the PreAuth before processing (or not) the payment.
 
 
-***Go Further:***
+**Go Further:**
 
 We recently partnered up with Riskified. Riskified is an anti-fraud solution which matches transaction data to instantly give approvals on transactions. To completely eliminate any risk for your business, Riskified covers any chargeback due to fraud on transaction approved by them.   
 	
-***Mangopay and Antifraud:***
+**Mangopay and Antifraud:**
 
 For 2018, we have planned different anti-fraud features to help you reduce significantly chargebacks. We will keep you posted on this subject and provide you tools and tips to improve payment security on your platform throughout the year.

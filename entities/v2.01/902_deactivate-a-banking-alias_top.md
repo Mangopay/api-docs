@@ -1,1 +1,1 @@
-[alert type="info"]Note that once deactivated, a banking alias can't be reactivated afterwards, and any funds received to this banking alias will then be refused[/alert]
+[alert type="info"]Note that once deactivated, a banking alias can't be reactivated afterwards, and any funds received to this banking alias won't be credited to the wallet. In this case, please contact our finance team at finance@mangopay.com. [/alert]

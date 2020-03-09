@@ -4,7 +4,7 @@ You can choose certain filters including:
 
 **Transactions**
 
-* A date range (`BeforeDate` and `AfterDate`) - note that the range can’t be more than 6 months, and must be < 13 months ago
+* A date range (`BeforeDate` and `AfterDate`) - note that the range can’t be more than 6 months, and must be < 36 months ago
 * Min/Max `DebitedFunds`
 * Min/Max `Fees`
 * A `WalletId`

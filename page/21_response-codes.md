@@ -19,6 +19,9 @@ All date and time values are displayed as integer numbers and represent the numb
 **Case Sensitive Parameters**
 The field and parameter names in requests are case sensitive.
 
+**ID**
+All objects IDs are given as strings (even though their content is actually an integer).
+
 **Amounts**
 All monetary amounts are given as integer numbers in cents (by default eurocents).
 

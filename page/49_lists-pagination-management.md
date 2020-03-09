@@ -39,7 +39,7 @@ In the header X-Number-Of-Pages you can read the number of pages in the entire l
 
 # Filtering list management
 
-You can filter all lists with multiple values for each GET parameter.
+You can filter **transactions lists** with multiple values for each GET parameter.
 
 Here is an example:
 ```
