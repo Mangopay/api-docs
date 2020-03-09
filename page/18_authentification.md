@@ -14,7 +14,7 @@ Note that the two methods and all communication with the API is only possible ov
 
 To connect to the API with a standard Basic Access Authentication, the client sends the server authentication credentials using the `Authorization` header. This is constructed as follows:
 
-1. `ClientId` and `Passphrase` are combined into a string separated by a colon, eg "`ClientId`:`Passphrase`"
+1. `ClientId` and `API KEY` are combined into a string separated by a colon, eg "`ClientId`:`API KEY`"
 2. The resulting string is then encoded using [Base64](https://en.wikipedia.org/wiki/Base64) ([here](http://www.motobit.com/util/base64-decoder-encoder.asp) is an online tool to give you an example, but your favourite coding language will be able to do this programmatically)
 3. The `Authorization` header is completed by adding "Basic " to the encoded string (please note the space between Basic and the string)
 
@@ -22,14 +22,14 @@ Please see the Wikipedia [article](https://en.wikipedia.org/wiki/Basic_access_au
 
 Here is an example:
 
-| `ClientId` | `Passphrase` | String to encode in Base64 | Base64 encoded string | Authorization Header |
+| `ClientId` | `API KEY` | String to encode in Base64 | Base64 encoded string | Authorization Header |
 | -------- | -------- | -------- | -------- | -------- |
 | Aladdin     | ghsiu6hjqQjj      | Aladdin:ghsiu6hjqQjj     | QWxhZGRpbjpnaHNpdTZoanFRamo=      | Basic QWxhZGRpbjpnaHNpdTZoanFRamo=     |
 
 With this Authorization Header, you can communicate with our service.
 
 **Security Level**
-Using Basic Authentication represents unnecessary level of risk since the `Passphrase` is transmitted in each and every call. This is the reason why we want to limit its exposure by instead using the OAuth 2.0 Authorization method.
+Using Basic Authentication represents unnecessary level of risk since the `API KEY` is transmitted in each and every call. This is the reason why we want to limit its exposure by instead using the OAuth 2.0 Authorization method.
 
 
 ## OAuth 2.0 : Client Credentials Grant
@@ -62,6 +62,6 @@ We have here in the body the `access_token` we were looking for - from the `expi
 Bearer 67b036bd007c40378d4be5a934f197e6
 ```
 
-Once your token has expired, you can just repeat the above step to get a new one. Operating in this way means that you only transmit your very senstive credentials (the `Passphrase`) when you need a token, and not for every single API call. The rest of the time, it is your “tokenized temporary credentials” that are transmitted with every call you make.
+Once your token has expired, you can just repeat the above step to get a new one. Operating in this way means that you only transmit your very senstive credentials (the `API KEY`) when you need a token, and not for every single API call. The rest of the time, it is your “tokenized temporary credentials” that are transmitted with every call you make.
 
 [alert type="danger"]You **must not** create a token for every API call you do - only when your token has expired, and you need to replace it[/alert]

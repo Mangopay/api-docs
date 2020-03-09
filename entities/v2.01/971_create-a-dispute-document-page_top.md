@@ -1,0 +1,1 @@
+[alert type="info"]The maximum size per page is about 7MB (or 10MB when base64encoded[/alert]

@@ -35,3 +35,13 @@ In the header X-Number-Of-Item you can read the number of items in the entire li
 
 **X-Number-Of-Pages**
 In the header X-Number-Of-Pages you can read the number of pages in the entire list.
+
+
+# Filtering list management
+
+You can filter **transactions lists** with multiple values for each GET parameter.
+
+Here is an example:
+```
+users/154876/transactions?Status=Succeeded,Failed&Type=Payin,Payout
+```

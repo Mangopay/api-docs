@@ -6,7 +6,7 @@ Please, be careful with your access credentials. In case you think someone has a
 
 ## How to access your MANGOPAY Dashboard
 **STEP 1. Ask for your access**
-* Go on [this link for a PRODUCTION ACCOUNT](https://api.mangopay.com/authorize?response_type=code&client_id=mangoapps&redirect_uri=https://dashboard.mangopay.com/Authorize/SignIn) or on [this link for SANDBOX ACCOUNT (test environment)](https://api.sandbox.mangopay.com/authorize?response_type=code&client_id=mangoapps&redirect_uri=https://dashboard.sandbox.mangopay.com/Authorize/SignIn)
+* Go on [this link for a PRODUCTION ACCOUNT](https://dashboard.mangopay.com/) or on [this link for SANDBOX ACCOUNT (test environment)](https://dashboard.sandbox.mangopay.com/)
 * Clic on "Create an access" button.
 * Enter your application’s ClientId and the email (you should already have created an account)
 

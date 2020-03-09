@@ -1,2 +1,4 @@
 A `PayOut` Bank wire is a request to withdraw money from a wallet to a bank account. You need to setup Bank Account before processing a PayOut Bank wire.
-[alert type="info"]There is a KYC limit on Pay-Outs in order to fight fraud, money laundering and financing of terrorism. You have to send some documents through the API. Please check the rules to go over the limits[/alert]
+[alert type="info"]There is a KYC limit on Pay-Outs in order to fight fraud, money laundering and financing of terrorism. You have to send some documents through the API. It's compulsory for any payout amount.  More info [here](https://docs.mangopay.com/guide/kyclimits) [/alert]
+
+[alert type="danger"]Note that successful payouts can be rejected by the recipient bank (eg the bank account is now closed, or a savings account and can't receive funds) - in this case, we will create a "payout refund" and the funds will be returned to the wallet - so it is important to check events/hook notifications for a "PAYOUT_REFUND_SUCCEEDED". You should also note that for some reasons, we'll automatically disable the bank account so you can't use it again.[/alert]

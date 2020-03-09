@@ -1,6 +1,6 @@
 **A PayIn by direct debit with a mandate** is a request to process a payment to a wallet for a dedicated user.
 
-[alert type="info"] Note that there is a limit of 2500EUR/GBP per direct debit payment – please contact your sales manager if you require a higher limit[/alert]
+[alert type="info"] Note that there is a limit of 1EUR/GBP (Min) - 2500EUR/GBP (Max) per direct debit payment – please contact your sales manager if you require a higher limit[/alert]
 
 * To use this payin method, you must have already created and submitted a [entity_link entity="230"]`Mandate`[/entity_link] (in a similar way to doing a direct card payin)
 * Late failures: note that due to the nature of this payment method, it is possible to have a "late failure" which is when the payment Status is already "SUCCEEDED" but later on, the bank pulls back the funds and to reflect that in the API, we will create a [entity_link entity="176"]`Dispute`[/entity_link] (and hence `Repudiation`) with the DisputeReasonType being "LATE_FAILURE" which gives more information regarding the reason. In BACS (UK) **the majority** of late failures happen within 2/3 days. In SEPA, **all** late failures are within 5 days.
@@ -9,9 +9,9 @@
 
 | Scheme | Payments with this mandat | Payment is created | User notified | Payment becomes "SUCCEEDED" |
 | -------- | -------- | -------- | -------- | -------- |
-| SEPA | 1st+ payment | D+0 | D+0 | D+4 |
-| BACS | 1st payment | D+0 | D+1 | D+5 |
-| BACS | 2nd+ payment | D+0 | D+0 | D+4 |
+| SEPA | 1st+ payment | D+0 | D+0 | D+5 |
+| BACS | 1st payment | D+0 | D+1 | D+6 |
+| BACS | 2nd+ payment | D+0 | D+0 | D+5 |
 
 * As with the submission of a mandate, we will notify the user of all upcoming payments on your behalf (the design of this email can be lightly customised – see [entity_link entity="200"]here[/entity_link])
 * For testing payments, you should use a specific value for the FirstName of the user owning the mandate
@@ -20,3 +20,5 @@
 3. "Fickle" will result in a successfull payment, which is disputed by the user and hence a dispute is created
 * [entity_link entity="230"]Mandate[/entity_link] and direct debit payins are only available for certain business types, and is not activated by default – please contact your sales manager for more info
 * For BACS payments, you should know that the banks Natwest, RBS, HSBC, Metro and Nationwide will not show your client name with payments, and only "MANGOPAY" will be shown
+
+[alert type="danger"]You should be very careful when refunding these direct debit payments because chargebacks (disputes) are **non-contestable**, therefore if the end-user also requests a chargeback to their bank for a payment you have already refunded, you will have to cover the disputed funds yourself (since the funds of the original payment have already been refunded).[/alert]

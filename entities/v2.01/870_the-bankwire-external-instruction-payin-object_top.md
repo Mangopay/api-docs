@@ -1,1 +1,0 @@
-A bankwire by "external instruction" is a slightly particular payin whereby it is created when we receive funds for a [entity_link entity="849"]banking alias[/entity_link] - this means there is no way of creating a payin of this kind via the API (in sandbox, please contact our support team for them to create some examples for you).

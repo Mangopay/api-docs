@@ -1,1 +1,1 @@
-View a list of a banking aliases for a wallet
+To view a wallet's banking aliases - remember that you can only have one banking alias per wallet (even though it is a list format).

@@ -13,6 +13,6 @@ Here is the CardRegistration flow (tokenization) then the Direct PayIn:
 
 [alert type="info"]**It is imperative to inform your users if you are registering their cards.**[/alert]
 
-[alert type="info"]You can find more information about the difference between Payin through WEB interface and Direct payin [here](https://mangopay.desk.com/customer/portal/articles/1630150-what-is-the-difference-between-payin-direct-and-payin-through-web-interface-)
+[alert type="info"]You can find more information about the difference between Payin through WEB interface and Direct payin [here](https://support.mangopay.com/s/article/what-is-the-difference-between-a-card-web-payin-and-a-card-direct-payin?language=en_US)
 
 You can check here the [Fees rules](/guide/collecting-platform-fees)[/alert]

@@ -1,0 +1,2 @@
+In the event you have credit following a Dispute (because you lost, or didn’t contest the full amount), you can do a settlement transfer to transfer funds from the original wallet to the credit wallet if you wish – this is entirely optional and will depend on your workflow whether you want to impact the original wallet or not. 
+The endpoint below provides you with the list of disputes that allow a settlement transfer - meaning that you have credit for these disputes and that funds are still available in the original wallet.
